@@ -1,0 +1,2673 @@
+<!doctype html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Fibra Fix 600g</title>
+    <meta
+      content="Fibra Fix 600 gramos con probióticos, prebióticos y múltiples ingredientes de origen vegetal."
+      name="description"
+    />
+
+    <style id="critical-css">
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Manrope", Arial, sans-serif;
+        background: #ffffff;
+        color: #14251a;
+        overflow-x: hidden;
+      }
+      img {
+        display: block;
+        max-width: 100%;
+      }
+      a {
+        -webkit-tap-highlight-color: transparent;
+      }
+      .top-bar {
+        position: relative;
+        width: 100%;
+        height: 48px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        background: linear-gradient(
+          90deg,
+          #0b3d24 0%,
+          #126b3a 50%,
+          #0b3d24 100%
+        );
+        color: #ffffff;
+        box-shadow: 0 4px 15px rgba(11, 61, 36, 0.18);
+      }
+      .top-bar-track {
+        display: flex;
+        align-items: center;
+        width: max-content;
+        animation: topBarInfinite 14s linear infinite;
+        will-change: transform;
+      }
+      .top-bar-group {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        gap: 35px;
+        padding-right: 35px;
+        white-space: nowrap;
+      }
+      .top-item {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        font-size: 14px;
+        font-weight: 700;
+      }
+      .top-icon {
+        font-size: 19px;
+      }
+      .top-separator {
+        color: #b9df68;
+        font-size: 14px;
+        opacity: 1;
+      }
+      @keyframes topBarInfinite {
+        0% {
+          transform: translateX(-50%);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+      .top-bar:hover .top-bar-track {
+        animation-play-state: paused;
+      }
+      .hero {
+        position: relative;
+        overflow: hidden;
+        padding: 65px 30px 80px;
+        background:
+          radial-gradient(
+            circle at 75% 45%,
+            rgba(198, 230, 104, 0.52),
+            transparent 35%
+          ),
+          radial-gradient(
+            circle at 15% 20%,
+            rgba(255, 255, 255, 0.95),
+            transparent 35%
+          ),
+          linear-gradient(110deg, #fffdf3 0%, #fbfbea 48%, #eef8dc 100%);
+      }
+      .hero-container {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        max-width: 1400px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 0.95fr 1.05fr;
+        align-items: center;
+        gap: 50px;
+      }
+      .hero-info {
+        max-width: 650px;
+      }
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 11px 20px;
+        margin-bottom: 28px;
+        border-radius: 50px;
+        background: #edf5c7;
+        color: #08752d;
+        font-size: 13px;
+        font-weight: 800;
+      }
+      .hero h1 {
+        max-width: 650px;
+        margin-bottom: 24px;
+        color: #064925;
+        font-size: clamp(48px, 5.4vw, 78px);
+        font-weight: 800;
+        line-height: 0.98;
+        letter-spacing: -4px;
+      }
+      .hero h1 span {
+        display: block;
+        color: #ff6500;
+      }
+      .hero-description {
+        max-width: 590px;
+        margin-bottom: 30px;
+        color: #354038;
+        font-size: 18px;
+        line-height: 1.55;
+      }
+      .benefit-row {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        margin: 30px 0 32px;
+      }
+      .mini-benefit {
+        padding: 5px 8px;
+        text-align: center;
+      }
+      .benefit-icon {
+        width: 58px;
+        height: 58px;
+        margin: 0 auto 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: #e8f0b9;
+        font-size: 26px;
+        box-shadow: 0 6px 18px rgba(32, 94, 43, 0.08);
+      }
+      .mini-benefit p {
+        color: #344239;
+        font-size: 12px;
+        line-height: 1.35;
+      }
+      .mini-benefit strong {
+        display: block;
+        color: #174829;
+      }
+      .hero-trust {
+        width: 100%;
+        max-width: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 45px;
+        margin-top: 28px;
+      }
+      .trust-item {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        text-align: left;
+      }
+      .trust-icon {
+        font-size: 25px;
+      }
+      .trust-item strong {
+        display: block;
+        color: #08672c;
+        font-size: 12px;
+      }
+      .trust-item small {
+        display: block;
+        margin-top: 2px;
+        color: #506057;
+        font-size: 10px;
+      }
+      .hero-product {
+        position: relative;
+        min-height: 650px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .product-background {
+        position: absolute;
+        width: 570px;
+        height: 570px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(215, 235, 126, 0.75),
+          rgba(236, 246, 200, 0.2) 55%,
+          transparent 70%
+        );
+      }
+      .product-image {
+        position: relative;
+        z-index: 2;
+        width: min(100%, 560px);
+        max-height: 620px;
+        object-fit: contain;
+        filter: drop-shadow(0 30px 28px rgba(28, 70, 35, 0.2));
+      }
+      .product-features {
+        position: absolute;
+        z-index: 5;
+        bottom: 25px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 18px;
+        width: max-content;
+        padding: 11px 22px;
+        border-radius: 50px;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 8px 25px rgba(20, 70, 35, 0.1);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+      }
+      .product-feature {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        color: #08672c;
+        font-size: 13px;
+        white-space: nowrap;
+      }
+      .product-feature-icon {
+        width: 22px;
+        height: 22px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: #e8f0b9;
+        color: #08752d;
+        font-size: 12px;
+        font-weight: 800;
+      }
+      .product-feature-divider {
+        width: 1px;
+        height: 22px;
+        background: #d7dfd0;
+      }
+      @media (max-width: 1000px) {
+        .hero-container {
+          gap: 20px;
+        }
+        .hero-product {
+          min-height: 540px;
+        }
+        .product-image {
+          max-width: 450px;
+        }
+        .product-background {
+          width: 450px;
+          height: 450px;
+        }
+        .hero h1 {
+          letter-spacing: -3px;
+        }
+      }
+      @media (max-width: 768px) {
+        .top-bar {
+          height: 42px;
+        }
+        .top-bar-track {
+          animation-duration: 15s;
+        }
+        .top-bar-group {
+          gap: 22px;
+          padding-right: 22px;
+        }
+        .top-item {
+          font-size: 12px;
+        }
+        .top-icon {
+          font-size: 16px;
+        }
+        .hero {
+          padding: 35px 18px 50px;
+        }
+        .hero-container {
+          grid-template-columns: 1fr;
+          gap: 5px;
+          text-align: center;
+        }
+        .hero-info {
+          width: 100%;
+          max-width: 100%;
+        }
+        .hero-badge {
+          margin-bottom: 20px;
+          padding: 9px 15px;
+          font-size: 11px;
+        }
+        .hero h1 {
+          font-size: clamp(42px, 12vw, 58px);
+          letter-spacing: -2.5px;
+          margin-bottom: 20px;
+        }
+        .hero-description {
+          margin: 0 auto 25px;
+          font-size: 16px;
+        }
+        .benefit-row {
+          grid-template-columns: repeat(2, 1fr);
+          max-width: 400px;
+          margin: 25px auto;
+        }
+        .benefit-icon {
+          width: 52px;
+          height: 52px;
+          font-size: 22px;
+        }
+        .hero-trust {
+          max-width: 100%;
+          justify-content: center;
+          gap: 25px;
+        }
+        .hero-product {
+          order: 2;
+          min-height: 430px;
+          margin-top: 10px;
+        }
+        .product-image {
+          max-width: 340px;
+          max-height: 410px;
+        }
+        .product-background {
+          width: 350px;
+          height: 350px;
+        }
+        .product-features {
+          bottom: -5px;
+          gap: 11px;
+          padding: 9px 15px;
+        }
+        .product-feature-icon {
+          width: 19px;
+          height: 19px;
+          font-size: 10px;
+        }
+        .product-feature-divider {
+          height: 18px;
+        }
+      }
+      @media (max-width: 430px) {
+        .hero {
+          padding-left: 14px;
+          padding-right: 14px;
+        }
+        .hero h1 {
+          font-size: 40px;
+        }
+        .hero-description {
+          font-size: 15px;
+        }
+        .benefit-row {
+          gap: 8px;
+        }
+        .mini-benefit {
+          padding: 5px 3px;
+        }
+        .product-image {
+          max-width: 290px;
+        }
+        .product-background {
+          width: 290px;
+          height: 290px;
+        }
+        .hero-product {
+          min-height: 370px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        .top-bar-track {
+          animation: none;
+        }
+      }
+      .hero h1,
+      .hero-description,
+      .hero-badge {
+        font-synthesis: none;
+      }
+    </style>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=optional"
+      media="print"
+      onload="this.media = 'all'"
+      rel="stylesheet"
+    />
+    <noscript
+      ><link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=optional"
+        rel="stylesheet"
+    /></noscript>
+    <link
+      as="style"
+      href="css/style.css"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+      rel="preload"
+    />
+    <noscript><link href="css/style.css" rel="stylesheet" /></noscript>
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="top-bar-track">
+        <div class="top-bar-group">
+          <div class="top-item">
+            <span class="top-icon">🚚</span>
+            <strong>Pago contra Entrega</strong>
+          </div>
+          <span class="top-separator">•</span>
+          <div class="top-item">
+            <span class="top-icon">📦</span>
+            <strong>Envío Gratis</strong>
+          </div>
+          <span class="top-separator">•</span>
+          <div class="top-item">
+            <span class="top-icon">🔒</span>
+            <strong>Compra Segura</strong>
+          </div>
+        </div>
+        <div aria-hidden="true" class="top-bar-group">
+          <div class="top-item">
+            <span class="top-icon">🚚</span>
+            <strong>Pago contra Entrega</strong>
+          </div>
+          <span class="top-separator">•</span>
+          <div class="top-item">
+            <span class="top-icon">📦</span>
+            <strong>Envío Gratis</strong>
+          </div>
+          <span class="top-separator">•</span>
+          <div class="top-item">
+            <span class="top-icon">🔒</span>
+            <strong>Compra Segura</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+    <main>
+      <section class="hero" id="inicio">
+        <div class="hero-container">
+          <div class="hero-info">
+            <div class="hero-badge">RESULTADOS EN SOLO 7 DIAS</div>
+            <h1>
+              ¿Hinchazón, pesadez y
+              <span> dificultad para ir al baño? </span>
+            </h1>
+            <p class="hero-description">
+              <strong>Fibra Fix</strong> Su fórmula de <strong>600 g</strong>,
+              con
+              <strong>más de 15 ingredientes + prebióticos y probióticos</strong
+              >, desinflama, alivia , regenera y acompaña tu bienestar
+              digestivo.
+              <strong>Actua desde la primera semana.</strong>
+            </p>
+            <div class="benefit-row" id="beneficios">
+              <div class="mini-benefit">
+                <div class="benefit-icon">
+                  <img
+                    alt="Fibra e ingredientes vegetales"
+                    src="images/icons/fibra.svg"
+                    width="58"
+                    height="58"
+                    loading="eager"
+                    fetchpriority="auto"
+                    decoding="async"
+                  />
+                </div>
+                <p>
+                  Pre y Probioticos
+                  <strong>Regenera tu flora intestinal</strong>
+                </p>
+              </div>
+              <div class="mini-benefit">
+                <div class="benefit-icon">
+                  <img
+                    alt="Probióticos y prebióticos"
+                    src="images/icons/probioticos.svg"
+                    width="58"
+                    height="58"
+                    loading="eager"
+                    fetchpriority="auto"
+                    decoding="async"
+                  />
+                </div>
+                <p>
+                  Desinflama
+                  <strong>Mejora el transito digestivo </strong>
+                </p>
+              </div>
+              <div class="mini-benefit">
+                <div class="benefit-icon">
+                  <img
+                    alt="Sabor naranja"
+                    src="images/icons/naranja.svg"
+                    width="58"
+                    height="58"
+                    loading="eager"
+                    fetchpriority="auto"
+                    decoding="async"
+                  />
+                </div>
+                <p>
+                  Combate Estreñimiento
+                  <strong>limpia colon e higado</strong>
+                </p>
+              </div>
+              <div class="mini-benefit">
+                <div class="benefit-icon">
+                  <img
+                    alt="Fácil de preparar"
+                    src="images/icons/preparacion.svg"
+                    width="58"
+                    height="58"
+                    loading="eager"
+                    fetchpriority="auto"
+                    decoding="async"
+                  />
+                </div>
+                <p>
+                  Ayuda a
+                  <strong>Controlar Peso </strong>
+                </p>
+              </div>
+            </div>
+            <a class="hero-cta-banner" href="#ofertas">
+              <span class="hero-cta-cart">🛒</span>
+              <span class="hero-cta-text"> QUIERO MI FIBRA FIX </span>
+              <span class="hero-cta-arrow">›</span>
+            </a>
+            <div class="hero-trust">
+              <div class="trust-item">
+                <span class="trust-icon"> 🚚 </span>
+                <div>
+                  <strong> Pago contra entrega </strong>
+                  <small> Paga cuando recibas </small>
+                </div>
+              </div>
+              <div class="trust-item">
+                <span class="trust-icon"> 📦 </span>
+                <div>
+                  <strong> Envío gratis </strong>
+                  <small> Sin costo adicional </small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-product">
+            <div class="product-background"></div>
+            <img
+              alt="Fibra Fix 600 gramos"
+              class="product-image"
+              decoding="async"
+              fetchpriority="auto"
+              height="1275"
+              loading="eager"
+              sizes="(max-width: 430px) 290px, (max-width: 768px) 340px, (max-width: 1000px) 450px, 560px"
+              src="images/fibfixnew-480.webp"
+              srcset="
+                images/fibfixnew-320.webp  320w,
+                images/fibfixnew-480.webp  480w,
+                images/fibfixnew-640.webp  640w,
+                images/fibfixnew-960.webp  960w,
+                images/fibfixnew.webp     1233w
+              "
+              width="1233"
+            />
+            <div class="product-features">
+              <div class="product-feature">
+                <span class="product-feature-icon">✓</span>
+                <strong>Sin efectos laxantes</strong>
+              </div>
+              <span class="product-feature-divider"></span>
+              <div class="product-feature">
+                <span class="product-feature-icon">✓</span>
+                <strong>40 porciones</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="pain-section">
+        <div class="pain-decoration pain-decoration-left">🌿</div>
+        <div class="pain-decoration pain-decoration-right">🌿</div>
+        <div class="pain-container">
+          <div class="pain-header">
+            <span class="pain-subtitle">
+              ¿PRESENTA ALGUNOS DE ESTOS SINTOMAS?
+            </span>
+            <h2>
+              Señales de que tu cuerpo necesita
+              <span>evacuar y limpiarse</span>
+              con urgencia
+            </h2>
+            <p>
+              Cuando tu digestión no está en equilibrio, te sientes inflamado,
+              pesado, con hinchazon, que afectan tu bienestar dia a dia.
+            </p>
+          </div>
+          <div class="pain-slider" id="painSlider">
+            <button
+              aria-label="Anterior"
+              class="pain-arrow pain-arrow-left"
+              id="painPrev"
+              type="button"
+            >
+              ‹
+            </button>
+            <div class="pain-viewport">
+              <div class="pain-track" id="painTrack">
+                <article class="pain-card">
+                  <div class="pain-image">
+                    <img
+                      alt="Mujer con malestar abdominal asociado al estreñimiento"
+                      decoding="async"
+                      height="1402"
+                      loading="lazy"
+                      sizes="(max-width: 768px) calc(100vw - 44px), (max-width: 1024px) 420px, 260px"
+                      src="images/dolores/Estreñimiento-360.webp"
+                      srcset="
+                        images/dolores/Estreñimiento-360.webp  360w,
+                        images/dolores/Estreñimiento-720.webp  720w,
+                        images/dolores/Estreñimiento.webp     1122w
+                      "
+                      width="1122"
+                    />
+                  </div>
+                  <div class="pain-icon">🚽</div>
+                  <div class="pain-card-content">
+                    <h3>Estreñimiento</h3>
+                    <p>
+                      <strong>Dificultad para ir al baño</strong>, evacuaciones
+                      poco frecuentes, esfuerzo al evacuar o sensación de no
+                      haber evacuado completamente.
+                    </p>
+                  </div>
+                </article>
+                <article class="pain-card">
+                  <div class="pain-image">
+                    <img
+                      alt="Mujer observando cambios en su cintura"
+                      decoding="async"
+                      height="1402"
+                      loading="lazy"
+                      sizes="(max-width: 768px) calc(100vw - 44px), (max-width: 1024px) 420px, 260px"
+                      src="images/dolores/aumento-peso-360.webp"
+                      srcset="
+                        images/dolores/aumento-peso-360.webp  360w,
+                        images/dolores/aumento-peso-720.webp  720w,
+                        images/dolores/aumento-peso.webp     1122w
+                      "
+                      width="1122"
+                    />
+                  </div>
+                  <div class="pain-icon">⚖️</div>
+                  <div class="pain-card-content">
+                    <h3>Aumento de peso</h3>
+                    <p>
+                      Cambios en el peso pueden estar relacionados con múltiples
+                      factores. Una alimentación
+                      <strong>baja en fibra y poco equilibrada</strong>
+                      también puede dificultar el control del apetito y una
+                      rutina alimentaria saludable.
+                    </p>
+                  </div>
+                </article>
+                <article class="pain-card pain-card-featured">
+                  <div class="pain-label">MUY COMÚN</div>
+                  <div class="pain-image">
+                    <img
+                      alt="Mujer con pesadez y malestar digestivo"
+                      decoding="async"
+                      height="1402"
+                      loading="lazy"
+                      sizes="(max-width: 768px) calc(100vw - 44px), (max-width: 1024px) 420px, 260px"
+                      src="images/dolores/Pesades-malestar-360.webp"
+                      srcset="
+                        images/dolores/Pesades-malestar-360.webp  360w,
+                        images/dolores/Pesades-malestar-720.webp  720w,
+                        images/dolores/Pesades-malestar.webp     1122w
+                      "
+                      width="1122"
+                    />
+                  </div>
+                  <div class="pain-icon">😣</div>
+                  <div class="pain-card-content">
+                    <h3>Pesadez y malestar digestivo</h3>
+                    <p>
+                      Sensación de
+                      <strong>llenura, pesadez o incomodidad</strong>
+                      después de comer que puede hacerte sentir menos cómodo
+                      durante el día.
+                    </p>
+                  </div>
+                </article>
+                <article class="pain-card">
+                  <div class="pain-image">
+                    <img
+                      alt="Mujer con inflamación y tensión abdominal"
+                      decoding="async"
+                      height="1402"
+                      loading="lazy"
+                      sizes="(max-width: 768px) calc(100vw - 44px), (max-width: 1024px) 420px, 260px"
+                      src="images/dolores/inflamacion-abdominal-360.webp"
+                      srcset="
+                        images/dolores/inflamacion-abdominal-360.webp  360w,
+                        images/dolores/inflamacion-abdominal-720.webp  720w,
+                        images/dolores/inflamacion-abdominal.webp     1122w
+                      "
+                      width="1122"
+                    />
+                  </div>
+                  <div class="pain-icon">🎈</div>
+                  <div class="pain-card-content">
+                    <h3>Inflamación abdominal</h3>
+                    <p>
+                      Abdomen <strong>hinchado o tenso</strong>, sensación de
+                      pesadez, gases frecuentes e incomodidad después de comer.
+                    </p>
+                  </div>
+                </article>
+                <article class="pain-card">
+                  <div class="pain-image">
+                    <img
+                      alt="Mujer cansada y con sueño durante el día"
+                      decoding="async"
+                      height="1402"
+                      loading="lazy"
+                      sizes="(max-width: 768px) calc(100vw - 44px), (max-width: 1024px) 420px, 260px"
+                      src="images/dolores/cansancio-sueño-360.webp"
+                      srcset="
+                        images/dolores/cansancio-sueño-360.webp  360w,
+                        images/dolores/cansancio-sueño-720.webp  720w,
+                        images/dolores/cansancio-sueño.webp     1122w
+                      "
+                      width="1122"
+                    />
+                  </div>
+                  <div class="pain-icon">😴</div>
+                  <div class="pain-card-content">
+                    <h3>Cansancio y sueño</h3>
+                    <p>
+                      Sentirte
+                      <strong>cansado, pesado o con sueño</strong>
+                      La Mala absorcion de nutrientes te dejan sin energias.
+                    </p>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <button
+              aria-label="Siguiente"
+              class="pain-arrow pain-arrow-right"
+              id="painNext"
+              type="button"
+            >
+              ›
+            </button>
+          </div>
+          <div
+            aria-label="Navegación del slider"
+            class="pain-dots"
+            id="painDots"
+          ></div>
+          <div class="pain-message">
+            <div class="pain-message-icon">💡</div>
+            <p>
+              <strong>Tu cuerpo te da señales.</strong>
+              Escucharlas es el primer paso para sentirte mejor.
+            </p>
+            <span class="pain-message-leaf"> 🌿 </span>
+          </div>
+        </div>
+      </section>
+      <section class="ingredients-section" id="ingredientes">
+        <div class="ingredients-decoration ingredients-decoration-left">🌿</div>
+        <div class="ingredients-decoration ingredients-decoration-right">
+          🌿
+        </div>
+        <div class="ingredients-container">
+          <div class="ingredients-header">
+            <span class="ingredients-subtitle"> INGREDIENTES NATURALES </span>
+            <h2>
+              Conoce sus ingredientes
+              <span>y cómo actúan en tu cuerpo</span>
+            </h2>
+            <p>
+              Una combinación de más de 15 ingredientes de origen natural, junto
+              con probióticos y prebióticos.
+            </p>
+          </div>
+          <div class="ingredients-slider" id="ingredientsSlider">
+            <button
+              aria-label="Ingrediente anterior"
+              class="ingredients-arrow ingredients-arrow-left"
+              id="ingredientsPrev"
+              type="button"
+            >
+              ‹
+            </button>
+            <div class="ingredients-viewport">
+              <div class="ingredients-track" id="ingredientsTrack">
+                <article class="ingredient-card">
+                  <div class="ingredient-image">
+                    <img
+                      alt="Semillas de chía"
+                      decoding="async"
+                      height="1254"
+                      loading="lazy"
+                      sizes="(max-width: 768px) 282px, (max-width: 1024px) 240px, 220px"
+                      src="images/ingredientes/chia-320.webp"
+                      srcset="
+                        images/ingredientes/chia-320.webp  320w,
+                        images/ingredientes/chia-640.webp  640w,
+                        images/ingredientes/chia.webp     1254w
+                      "
+                      width="1254"
+                    />
+                  </div>
+                  <div class="ingredient-card-content">
+                    <h3>Semillas de chía</h3>
+                    <p>
+                      fibra soluble, forma un gel en el estómago, ralentiza la
+                      digestión, aumenta la saciedad y facilita el tránsito
+                      intestinal <strong>contra el estreñimiento.</strong>
+                    </p>
+                    <div class="ingredient-benefit">
+                      <img
+                        alt=""
+                        aria-hidden="true"
+                        height="1254"
+                        src="images/icons/ingredientes/Mejora-digestion.svg"
+                        width="1254"
+                      />
+                      <span>Mejora la Digestion</span>
+                    </div>
+                  </div>
+                </article>
+                <article class="ingredient-card">
+                  <div class="ingredient-image">
+                    <img
+                      alt="Linaza"
+                      decoding="async"
+                      height="1254"
+                      loading="lazy"
+                      sizes="(max-width: 768px) 282px, (max-width: 1024px) 240px, 220px"
+                      src="images/ingredientes/linaza-320.webp"
+                      srcset="
+                        images/ingredientes/linaza-320.webp  320w,
+                        images/ingredientes/linaza-640.webp  640w,
+                        images/ingredientes/linaza.webp     1254w
+                      "
+                      width="1254"
+                    />
+                  </div>
+                  <div class="ingredient-card-content">
+                    <h3>Linaza</h3>
+                    <p>
+                      Estimula el movimiento intestinal y ayuda a regular los
+                      niveles de colesterol y glucosa.
+                    </p>
+                    <div class="ingredient-benefit">
+                      <img
+                        alt=""
+                        aria-hidden="true"
+                        height="1254"
+                        src="images/icons/ingredientes/Desinflama .svg"
+                        width="1254"
+                      />
+                      <span>Alivia Desinflama</span>
+                    </div>
+                  </div>
+                </article>
+                <article class="ingredient-card">
+                  <div class="ingredient-image">
+                    <img
+                      alt="Alcachofa"
+                      decoding="async"
+                      height="1254"
+                      loading="lazy"
+                      sizes="(max-width: 768px) 282px, (max-width: 1024px) 240px, 220px"
+                      src="images/ingredientes/alcachofa-320.webp"
+                      srcset="
+                        images/ingredientes/alcachofa-320.webp  320w,
+                        images/ingredientes/alcachofa-640.webp  640w,
+                        images/ingredientes/alcachofa.webp     1254w
+                      "
+                      width="1254"
+                    />
+                  </div>
+                  <div class="ingredient-card-content">
+                    <h3>Alcachofa</h3>
+                    <p>
+                      Estimula la producción de bilis para digerir mejor las
+                      grasas y actúa como diurético suave, reduce la pesadez y
+                      la retención de líquidos.
+                    </p>
+                    <div class="ingredient-benefit">
+                      <img
+                        alt=""
+                        aria-hidden="true"
+                        height="1254"
+                        src="images/icons/ingredientes/Desinflama .svg"
+                        width="1254"
+                      />
+                      <span>Alivia Desinflama</span>
+                    </div>
+                  </div>
+                </article>
+                <article class="ingredient-card">
+                  <div class="ingredient-image">
+                    <img
+                      alt="Berenjena"
+                      decoding="async"
+                      height="1254"
+                      loading="lazy"
+                      sizes="(max-width: 768px) 282px, (max-width: 1024px) 240px, 220px"
+                      src="images/ingredientes/berenjena-320.webp"
+                      srcset="
+                        images/ingredientes/berenjena-320.webp  320w,
+                        images/ingredientes/berenjena-640.webp  640w,
+                        images/ingredientes/berenjena.webp     1254w
+                      "
+                      width="1254"
+                    />
+                  </div>
+                  <div class="ingredient-card-content">
+                    <h3>Berenjena</h3>
+                    <p>
+                      promueve la saciedad y ayuda a depurar el organismo
+                      facilitando la digestión.
+                    </p>
+                    <div class="ingredient-benefit">
+                      <img
+                        alt=""
+                        aria-hidden="true"
+                        height="1254"
+                        src="images/icons/ingredientes/control-apetito.svg"
+                        width="1254"
+                      />
+                      <span>Controla Apetito</span>
+                    </div>
+                  </div>
+                </article>
+                <article class="ingredient-card">
+                  <div class="ingredient-image">
+                    <img
+                      alt="Nopal"
+                      decoding="async"
+                      height="1254"
+                      loading="lazy"
+                      sizes="(max-width: 768px) 282px, (max-width: 1024px) 240px, 220px"
+                      src="images/ingredientes/Nopal-320.webp"
+                      srcset="
+                        images/ingredientes/Nopal-320.webp  320w,
+                        images/ingredientes/Nopal-640.webp  640w,
+                        images/ingredientes/Nopal.webp     1254w
+                      "
+                      width="1254"
+                    />
+                  </div>
+                  <div class="ingredient-card-content">
+                    <h3>Nopal</h3>
+                    <p>
+                      Regula los niveles de azúcar en sangre, prolonga la
+                      sensación de llenado y previene el estreñimiento.
+                    </p>
+                    <div class="ingredient-benefit">
+                      <img
+                        alt=""
+                        aria-hidden="true"
+                        src="images/icons/ingredientes/estreñimientoing .svg"
+                      />
+                      <span>Previene Estreñimiento</span>
+                    </div>
+                  </div>
+                </article>
+                <article class="ingredient-card">
+                  <div class="ingredient-image">
+                    <img
+                      alt="Té verde"
+                      decoding="async"
+                      height="1128"
+                      loading="lazy"
+                      sizes="(max-width: 768px) 282px, (max-width: 1024px) 240px, 220px"
+                      src="images/ingredientes/te-verde-320.webp"
+                      srcset="
+                        images/ingredientes/te-verde-320.webp  320w,
+                        images/ingredientes/te-verde-640.webp  640w,
+                        images/ingredientes/te-verde.webp     1394w
+                      "
+                      width="1394"
+                    />
+                  </div>
+                  <div class="ingredient-card-content">
+                    <h3>Té verde</h3>
+                    <p>
+                      Acelera el metabolismo y la oxidación de grasas, además de
+                      favorecer la digestión tras las comidas.
+                    </p>
+                    <div class="ingredient-benefit">
+                      <img
+                        alt=""
+                        aria-hidden="true"
+                        height="1254"
+                        src="images/icons/ingredientes/control-peso .svg"
+                        width="1254"
+                      />
+                      <span>Control de Peso</span>
+                    </div>
+                  </div>
+                </article>
+                <article class="ingredient-card">
+                  <div class="ingredient-image">
+                    <img
+                      alt="Té negro"
+                      decoding="async"
+                      height="1024"
+                      loading="lazy"
+                      sizes="(max-width: 768px) 282px, (max-width: 1024px) 240px, 220px"
+                      src="images/ingredientes/te-negro-320.webp"
+                      srcset="
+                        images/ingredientes/te-negro-320.webp  320w,
+                        images/ingredientes/te-negro-640.webp  640w,
+                        images/ingredientes/te-negro.webp     1536w
+                      "
+                      width="1536"
+                    />
+                  </div>
+                  <div class="ingredient-card-content">
+                    <h3>Té negro</h3>
+                    <p>
+                      Ayuda a calmar el tracto digestivo, mientras que la
+                      cafeína estimula el metabolismo y apoya la quema de
+                      calorías.
+                    </p>
+                    <div class="ingredient-benefit">
+                      <img
+                        alt=""
+                        aria-hidden="true"
+                        src="images/icons/ingredientes/estreñimientoing .svg"
+                      />
+                      <span>Alivia Estreñimiento</span>
+                    </div>
+                  </div>
+                </article>
+                <article class="ingredient-card">
+                  <div class="ingredient-image">
+                    <img
+                      alt="Kiwi"
+                      decoding="async"
+                      height="1254"
+                      loading="lazy"
+                      sizes="(max-width: 768px) 282px, (max-width: 1024px) 240px, 220px"
+                      src="images/ingredientes/kiwi-320.webp"
+                      srcset="
+                        images/ingredientes/kiwi-320.webp  320w,
+                        images/ingredientes/kiwi-640.webp  640w,
+                        images/ingredientes/kiwi.webp     1254w
+                      "
+                      width="1254"
+                    />
+                  </div>
+                  <div class="ingredient-card-content">
+                    <h3>Kiwi</h3>
+                    <p>
+                      Combate el estreñimiento cronico gracias a la actinidina
+                    </p>
+                    <div class="ingredient-benefit">
+                      <img
+                        alt=""
+                        aria-hidden="true"
+                        src="images/icons/ingredientes/estreñimientoing .svg"
+                      />
+                      <span>Alivia el Estreñimiento</span>
+                    </div>
+                  </div>
+                </article>
+                <article class="ingredient-card">
+                  <div class="ingredient-image">
+                    <img
+                      alt="Canela"
+                      decoding="async"
+                      height="1254"
+                      loading="lazy"
+                      sizes="(max-width: 768px) 282px, (max-width: 1024px) 240px, 220px"
+                      src="images/ingredientes/canela-320.webp"
+                      srcset="
+                        images/ingredientes/canela-320.webp  320w,
+                        images/ingredientes/canela-640.webp  640w,
+                        images/ingredientes/canela.webp     1254w
+                      "
+                      width="1254"
+                    />
+                  </div>
+                  <div class="ingredient-card-content">
+                    <h3>Canela</h3>
+                    <p>
+                      Ayuda a regular la respuesta insulínica y los picos de
+                      glucosa en sangre, reduciendo los antojos de dulce y
+                      apoyando la pérdida de peso.
+                    </p>
+                    <div class="ingredient-benefit">
+                      <img
+                        alt=""
+                        aria-hidden="true"
+                        height="1254"
+                        src="images/icons/ingredientes/control-peso .svg"
+                        width="1254"
+                      />
+                      <span>Control de Peso y Azucar</span>
+                    </div>
+                  </div>
+                </article>
+                <article class="ingredient-card">
+                  <div class="ingredient-image">
+                    <img
+                      alt="Manzana"
+                      decoding="async"
+                      height="1254"
+                      loading="lazy"
+                      sizes="(max-width: 768px) 282px, (max-width: 1024px) 240px, 220px"
+                      src="images/ingredientes/manzana-320.webp"
+                      srcset="
+                        images/ingredientes/manzana-320.webp  320w,
+                        images/ingredientes/manzana-640.webp  640w,
+                        images/ingredientes/manzana.webp     1254w
+                      "
+                      width="1254"
+                    />
+                  </div>
+                  <div class="ingredient-card-content">
+                    <h3>Manzana verde</h3>
+                    <p>
+                      Regula el tránsito de las heces y ayuda en el control de
+                      peso.
+                    </p>
+                    <div class="ingredient-benefit">
+                      <img
+                        alt=""
+                        aria-hidden="true"
+                        height="1254"
+                        src="images/icons/ingredientes/Mejora-digestion.svg"
+                        width="1254"
+                      />
+                      <span>Control de Peso y Digestion</span>
+                    </div>
+                  </div>
+                </article>
+                <article class="ingredient-card">
+                  <div class="ingredient-image">
+                    <img
+                      alt="Spirulina"
+                      decoding="async"
+                      height="1254"
+                      loading="lazy"
+                      sizes="(max-width: 768px) 282px, (max-width: 1024px) 240px, 220px"
+                      src="images/ingredientes/spirulina-320.webp"
+                      srcset="
+                        images/ingredientes/spirulina-320.webp  320w,
+                        images/ingredientes/spirulina-640.webp  640w,
+                        images/ingredientes/spirulina.webp     1254w
+                      "
+                      width="1254"
+                    />
+                  </div>
+                  <div class="ingredient-card-content">
+                    <h3>Spirulina</h3>
+                    <p>
+                      Sacia el apetito debido a su alta concentración de
+                      proteínas y nutrientes, y apoya el metabolismo general del
+                      cuerpo.
+                    </p>
+                    <div class="ingredient-benefit">
+                      <img
+                        alt=""
+                        aria-hidden="true"
+                        height="1254"
+                        src="images/icons/ingredientes/Desinflama .svg"
+                        width="1254"
+                      />
+                      <span>Alivia Desinflama</span>
+                    </div>
+                  </div>
+                </article>
+                <article class="ingredient-card">
+                  <div class="ingredient-image">
+                    <img
+                      alt="Pitahaya"
+                      decoding="async"
+                      height="1024"
+                      loading="lazy"
+                      sizes="(max-width: 768px) 282px, (max-width: 1024px) 240px, 220px"
+                      src="images/ingredientes/pitahaya-320.webp"
+                      srcset="
+                        images/ingredientes/pitahaya-320.webp  320w,
+                        images/ingredientes/pitahaya-640.webp  640w,
+                        images/ingredientes/pitahaya.webp     1536w
+                      "
+                      width="1536"
+                    />
+                  </div>
+                  <div class="ingredient-card-content">
+                    <h3>Pitahaya</h3>
+                    <p>
+                      Promueve el movimiento intestinal y alivia el
+                      estreñimiento.
+                    </p>
+                    <div class="ingredient-benefit">
+                      <img
+                        alt=""
+                        aria-hidden="true"
+                        src="images/icons/ingredientes/estreñimientoing .svg"
+                      />
+                      <span>Previene Estreñimiento</span>
+                    </div>
+                  </div>
+                </article>
+                <article class="ingredient-card">
+                  <div class="ingredient-image">
+                    <img
+                      alt="Flor de Jamaica"
+                      decoding="async"
+                      height="1024"
+                      loading="lazy"
+                      sizes="(max-width: 768px) 282px, (max-width: 1024px) 240px, 220px"
+                      src="images/ingredientes/flor-jamaica-320.webp"
+                      srcset="
+                        images/ingredientes/flor-jamaica-320.webp  320w,
+                        images/ingredientes/flor-jamaica-640.webp  640w,
+                        images/ingredientes/flor-jamaica.webp     1536w
+                      "
+                      width="1536"
+                    />
+                  </div>
+                  <div class="ingredient-card-content">
+                    <h3>Flor de Jamaica</h3>
+                    <p>
+                      Ayuda a combatir la retención de líquidos y apoya la
+                      digestión disminuyendo la hinchazón abdominal.
+                    </p>
+                    <div class="ingredient-benefit">
+                      <img
+                        alt=""
+                        aria-hidden="true"
+                        height="1254"
+                        src="images/icons/ingredientes/Desinflama .svg"
+                        width="1254"
+                      />
+                      <span>Alivia Desinflama</span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <button
+              aria-label="Siguiente ingrediente"
+              class="ingredients-arrow ingredients-arrow-right"
+              id="ingredientsNext"
+              type="button"
+            >
+              ›
+            </button>
+          </div>
+          <div
+            aria-label="Navegación de ingredientes"
+            class="ingredients-dots"
+            id="ingredientsDots"
+          ></div>
+          <div class="ingredients-features">
+            <div class="ingredients-feature">
+              <div class="ingredients-feature-icon">
+                <img
+                  alt="Probióticos y prebióticos"
+                  height="402"
+                  src="images/icons/ingredientes/prebioticos -probioticos.svg"
+                  width="408"
+                />
+              </div>
+              <div>
+                <strong>CON PROBIÓTICOS Y PREBIÓTICOS</strong>
+                <p>Regeneran y Recuperan la microbiota intestinal .</p>
+              </div>
+            </div>
+            <div class="ingredients-feature">
+              <div class="ingredients-feature-icon">
+                <img
+                  alt="No es laxante"
+                  height="398"
+                  src="images/icons/ingredientes/Bienestar.svg"
+                  width="459"
+                />
+              </div>
+              <div>
+                <strong>NO ES LAXANTE</strong>
+                <p>
+                  Una fórmula de fibra pensada para acompañar tu rutina
+                  digestiva.
+                </p>
+              </div>
+            </div>
+            <div class="ingredients-feature">
+              <div class="ingredients-feature-icon">
+                <img
+                  alt="600 gramos"
+                  height="410"
+                  src="images/icons/ingredientes/600grm.svg"
+                  width="457"
+                />
+              </div>
+              <div>
+                <strong>600 GRAMOS, RINDE MAS</strong>
+                <p>Mas contenido, 40 porcines.</p>
+              </div>
+            </div>
+            <div class="ingredients-feature">
+              <div class="ingredients-feature-icon">
+                <img
+                  alt="Enriquecida con vitaminas"
+                  height="410"
+                  src="images/icons/ingredientes/vitaminas.svg"
+                  width="458"
+                />
+              </div>
+              <div>
+                <strong>ENRIQUECIDA CON VITAMINAS</strong>
+                <p>Una fórmula que también incorpora vitaminas.</p>
+              </div>
+            </div>
+          </div>
+          <div class="ingredients-message">
+            <div class="ingredients-message-icon">🌱</div>
+            <p>
+              <strong>No se trata de solo fibra,</strong>
+              <span
+                >debes regenerar tu flora intestinal con pro y
+                prebioticos.</span
+              >
+            </p>
+          </div>
+          <div class="ingredients-register">
+            <img
+              alt=""
+              aria-hidden="true"
+              decoding="async"
+              height="1151"
+              loading="lazy"
+              src="images/icons/ingredientes/rsainvima.webp"
+              width="1367"
+            />
+            <div class="ingredients-register-info">
+              <p>
+                <strong>Registro INVIMA:</strong>
+                RSA-0020303-2022
+              </p>
+              <p class="ingredients-manufacturer">
+                Elaborado por <strong>Laboratorios Nutrimed</strong>
+                · Bucaramanga - Santander ·
+                <strong>100% Natural</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="how-use-section" id="como-usar">
+        <div class="how-use-container">
+          <div class="how-use-header">
+            <span class="how-use-badge"> MODO DE USO </span>
+            <h2>
+              ¿Cómo preparar
+              <span>Fibra Fix?</span>
+            </h2>
+            <p>Fácil de preparar en pocos pasos.</p>
+          </div>
+          <div class="how-use-content">
+            <div class="how-use-media">
+              <div class="how-use-gif-container">
+                <video
+                  aria-label="Preparación de Fibra Fix"
+                  autoplay=""
+                  class="how-use-gif"
+                  loop=""
+                  muted=""
+                  playsinline=""
+                  preload="metadata"
+                >
+                  <source
+                    src="images/modo-uso/preparacion-fibra-fix.webm"
+                    type="video/webm"
+                  />
+                  <source
+                    src="images/modo-uso/preparacion-fibra-fix.mp4"
+                    type="video/mp4"
+                  />
+                  Tu navegador no soporta video.
+                </video>
+                <div class="how-use-gif-label">
+                  <div>
+                    <strong>Preparación paso a paso</strong>
+                    <small>Mira cómo preparar Fibra Fix</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="how-use-steps">
+              <article class="how-use-step">
+                <div class="how-use-number">01</div>
+                <div class="how-use-step-icon">🥄</div>
+                <div class="how-use-step-text">
+                  <h3>AGREGA</h3>
+                  <p>
+                    Sirve un vaso de Agua de 200ml y agrega un scoop (15 grm) de
+                    <strong>Fibra Fix</strong>
+                  </p>
+                </div>
+              </article>
+              <article class="how-use-step">
+                <div class="how-use-number">02</div>
+                <div class="how-use-step-icon">💧</div>
+                <div class="how-use-step-text">
+                  <h3>MEZCLA</h3>
+                  <p>Revuelve hasta que la fibra quede bien disuelta.</p>
+                </div>
+              </article>
+              <article class="how-use-step">
+                <div class="how-use-number">03</div>
+                <div class="how-use-step-icon">🥤</div>
+                <div class="how-use-step-text">
+                  <h3>DISFRUTA</h3>
+                  <p>Puedes tomar con Agua, jugo o tu bebida favorita.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="how-use-tip">
+            <div class="how-use-tip-icon">💡</div>
+            <div>
+              <strong>TIP IMPORTANTE</strong>
+              <p>
+                Toma 1 vez al dia o 2 si tienes estreñimiento cronico. 30
+                minutos antes del desayuno o/y comida.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="why-fibra-section" id="por-que-fibra-fix">
+        <div class="why-fibra-container">
+          <div class="why-fibra-header">
+            <span class="why-fibra-badge"> ¿POR QUÉ ELEGIR? </span>
+            <h2>Fibra <span>Fix?</span></h2>
+            <p>La diferencia está en lo que contiene.</p>
+          </div>
+          <div class="comparison-table">
+            <div class="comparison-row comparison-header">
+              <div class="comparison-cell characteristic-title">Item</div>
+              <div class="comparison-cell fibra-column">
+                <img
+                  alt="Fibra Fix 600 gramos"
+                  class="comparison-product"
+                  decoding="async"
+                  height="1536"
+                  loading="lazy"
+                  src="images/fibrafixnuevo.webp"
+                  width="1024"
+                />
+                <strong>Fibra Fix</strong>
+              </div>
+              <div class="comparison-cell other-column">
+                <div class="other-product-shape">Otras<br />Marcas</div>
+                <strong>Otras Marcas</strong>
+              </div>
+            </div>
+            <div class="comparison-row">
+              <div class="comparison-cell comparison-label">Cantidad</div>
+              <div class="comparison-cell fibra-column fibra-feature-cell">
+                <div class="fibra-feature-text">
+                  <strong>600 gramos</strong>
+                  <span>40 porciones</span>
+                </div>
+                <span class="fibra-check">✓</span>
+              </div>
+              <div class="comparison-cell other-column">
+                <span>300 - 450 gramos</span>
+                <small>15 - 30 porciones</small>
+              </div>
+            </div>
+            <div class="comparison-row">
+              <div class="comparison-cell comparison-label">Ingredientes</div>
+              <div class="comparison-cell fibra-column fibra-feature-cell">
+                <div class="fibra-feature-text">
+                  <strong>Más de 15 ingredientes</strong>
+                </div>
+                <span class="fibra-check">✓</span>
+              </div>
+              <div class="comparison-cell other-column">
+                <span>Pocos ingredientes</span>
+              </div>
+            </div>
+            <div class="comparison-row">
+              <div class="comparison-cell comparison-label">
+                Probióticos y prebióticos
+              </div>
+              <div class="comparison-cell fibra-column fibra-feature-cell">
+                <div class="fibra-feature-text">
+                  <strong>Sí contiene</strong>
+                  <span>probióticos y prebióticos</span>
+                </div>
+                <span class="fibra-check">✓</span>
+              </div>
+              <div class="comparison-cell other-column">
+                <span>No contiene</span>
+              </div>
+            </div>
+            <div class="comparison-row">
+              <div class="comparison-cell comparison-label">No es laxante</div>
+              <div class="comparison-cell fibra-column fibra-feature-cell">
+                <div class="fibra-feature-text">
+                  <strong>Sí</strong>
+                  <span>No es laxante</span>
+                </div>
+                <span class="fibra-check">✓</span>
+              </div>
+              <div class="comparison-cell other-column">
+                <span>Algunas pueden tener efecto laxante</span>
+              </div>
+            </div>
+            <div class="comparison-row">
+              <div class="comparison-cell comparison-label">Efecto</div>
+              <div
+                class="comparison-cell fibra-column fibra-feature-cell comparison-highlight"
+              >
+                <div class="fibra-feature-text">
+                  <strong>7 días</strong>
+                </div>
+                <span class="fibra-check">✓</span>
+              </div>
+              <div
+                class="comparison-cell other-column comparison-highlight-other"
+              >
+                <strong>1 mes o más</strong>
+              </div>
+            </div>
+          </div>
+          <div class="why-benefits">
+            <div class="why-benefit">
+              <div class="why-benefit-icon">
+                <img
+                  alt=""
+                  height="1254"
+                  src="images/icons/ingredientes/Desinflama .svg"
+                  width="1254"
+                />
+              </div>
+              <h3>
+                Elimina
+                <span>Desechos y Desinflama.</span>
+              </h3>
+            </div>
+            <div class="why-benefit">
+              <div class="why-benefit-icon">
+                <img
+                  alt=""
+                  src="images/icons/ingredientes/estreñimientoing .svg"
+                />
+              </div>
+              <h3>
+                Combate
+                <span>Estreñimiento y Pesadez.</span>
+              </h3>
+            </div>
+            <div class="why-benefit">
+              <div class="why-benefit-icon">
+                <img
+                  alt=""
+                  height="398"
+                  src="images/icons/ingredientes/Bienestar.svg"
+                  width="459"
+                />
+              </div>
+              <h3>
+                Regenera tu
+                <span>flora intestinal.</span>
+              </h3>
+            </div>
+          </div>
+          <div class="why-final-features">
+            <div>Más contenido</div>
+            <div>Más resultados</div>
+            <div>Más completa</div>
+          </div>
+        </div>
+      </section>
+      <section class="wellness-cta-section">
+        <div class="wellness-cta-container">
+          <div class="wellness-cta-copy">
+            <span class="wellness-mini-badge">
+              🌿 TU BIENESTAR EMPIEZA HOY
+            </span>
+            <h2>
+              ¿Estás listo para volver
+              <span>a tus días de bienestar</span>
+              y llenos de energía?
+            </h2>
+          </div>
+          <div class="wellness-cta-product">
+            <div class="wellness-product-halo"></div>
+            <div class="wellness-product-ring wellness-product-ring-one"></div>
+            <div class="wellness-product-ring wellness-product-ring-two"></div>
+            <img
+              alt="Fibra Fix 600 gramos"
+              class="wellness-product-image"
+              decoding="async"
+              height="1254"
+              loading="lazy"
+              src="images/fibrafixportada02.webp"
+              width="1254"
+            />
+          </div>
+          <div class="wellness-cta-action">
+            <div class="wellness-days">
+              <span class="wellness-days-small"> Siente la diferencia en </span>
+              <strong> 7 DÍAS </strong>
+              <div class="wellness-days-decoration">
+                <span></span>
+              </div>
+            </div>
+            <a class="wellness-offer-button" href="#ofertas">
+              <span class="wellness-offer-text"> QUIERO MI OFERTA </span>
+              <span class="wellness-offer-arrow"> › </span>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="testimonials-section" id="testimonios">
+        <div class="testimonials-container">
+          <div class="testimonials-header">
+            <span class="testimonials-badge"> TESTIMONIOS REALES </span>
+            <h2>
+              Lo que dicen nuestros
+              <span>clientes de Fibra Fix</span>
+            </h2>
+            <p>
+              Experiencias compartidas por personas que ya conocen Fibra Fix.
+            </p>
+          </div>
+          <div class="testimonials-slider" id="testimonialsSlider">
+            <button
+              aria-label="Testimonio anterior"
+              class="testimonials-arrow testimonials-arrow-left"
+              id="testimonialsPrev"
+              type="button"
+            >
+              ‹
+            </button>
+            <div class="testimonials-viewport">
+              <div class="testimonials-track" id="testimonialsTrack">
+                <article class="testimonial-card testimonial-video-card">
+                  <div class="video-testimonial-badge">
+                    <span class="video-badge-play">▶</span>
+                    <div class="video-badge-text">
+                      <strong>MIRA SU EXPERIENCIA</strong>
+                      <span>Reproduce el Video</span>
+                    </div>
+                  </div>
+                  <video
+                    class="testimonial-video"
+                    controls=""
+                    id="testimonialVideo"
+                    playsinline=""
+                    preload="metadata"
+                  >
+                    <source
+                      src="videos/video-testimonio-web.mp4"
+                      type="video/mp4"
+                    />
+                    Tu navegador no soporta video.
+                  </video>
+                </article>
+                <article class="testimonial-card">
+                  <img
+                    alt="Testimonio de cliente Fibra Fix"
+                    decoding="async"
+                    height="1500"
+                    loading="lazy"
+                    src="images/testimonios/testimonio1.webp"
+                    width="1000"
+                  />
+                </article>
+                <article class="testimonial-card">
+                  <img
+                    alt="Testimonio de cliente Fibra Fix"
+                    decoding="async"
+                    height="1500"
+                    loading="lazy"
+                    src="images/testimonios/testimonio2.webp"
+                    width="1000"
+                  />
+                </article>
+                <article class="testimonial-card">
+                  <img
+                    alt="Testimonio de cliente Fibra Fix"
+                    decoding="async"
+                    height="1600"
+                    loading="lazy"
+                    src="images/testimonios/testimonio03.webp"
+                    width="840"
+                  />
+                </article>
+                <article class="testimonial-card">
+                  <img
+                    alt="Testimonio de cliente Fibra Fix"
+                    decoding="async"
+                    height="1600"
+                    loading="lazy"
+                    src="images/testimonios/testimonio04.webp"
+                    width="728"
+                  />
+                </article>
+                <article class="testimonial-card">
+                  <img
+                    alt="Testimonio de cliente Fibra Fix"
+                    decoding="async"
+                    height="1600"
+                    loading="lazy"
+                    src="images/testimonios/testimonio06.webp"
+                    width="728"
+                  />
+                </article>
+                <article class="testimonial-card">
+                  <img
+                    alt="Testimonio de cliente Fibra Fix"
+                    decoding="async"
+                    height="1500"
+                    loading="lazy"
+                    src="images/testimonios/testimonio07.webp"
+                    width="1000"
+                  />
+                </article>
+                <article class="testimonial-card">
+                  <img
+                    alt="Testimonio de cliente Fibra Fix"
+                    decoding="async"
+                    height="1500"
+                    loading="lazy"
+                    src="images/testimonios/testimonio08.webp"
+                    width="1000"
+                  />
+                </article>
+                <article class="testimonial-card">
+                  <img
+                    alt="Testimonio de cliente Fibra Fix"
+                    decoding="async"
+                    height="1500"
+                    loading="lazy"
+                    src="images/testimonios/testimonio09.webp"
+                    width="1000"
+                  />
+                </article>
+                <article class="testimonial-card">
+                  <img
+                    alt="Testimonio de cliente Fibra Fix"
+                    decoding="async"
+                    height="1500"
+                    loading="lazy"
+                    src="images/testimonios/testimonio10.webp"
+                    width="1000"
+                  />
+                </article>
+                <article class="testimonial-card">
+                  <img
+                    alt="Testimonio de cliente Fibra Fix"
+                    decoding="async"
+                    height="1844"
+                    loading="lazy"
+                    src="images/testimonios/testimonio11.webp"
+                    width="853"
+                  />
+                </article>
+                <article class="testimonial-card">
+                  <img
+                    alt="Testimonio de cliente Fibra Fix"
+                    decoding="async"
+                    height="622"
+                    loading="lazy"
+                    src="images/testimonios/testimonio12.webp"
+                    width="493"
+                  />
+                </article>
+              </div>
+            </div>
+            <button
+              aria-label="Siguiente testimonio"
+              class="testimonials-arrow testimonials-arrow-right"
+              id="testimonialsNext"
+              type="button"
+            >
+              ›
+            </button>
+          </div>
+          <div
+            aria-label="Navegación de testimonios"
+            class="testimonials-dots"
+            id="testimonialsDots"
+          ></div>
+        </div>
+      </section>
+      <section class="offers-section" id="ofertas">
+        <div class="offers-header">
+          <span class="offers-eyebrow"> ELIGE LA OPCIÓN IDEAL PARA TI </span>
+          <h2>
+            ELIGE TU
+            <span>PROMO</span>
+          </h2>
+          <p>
+            Más Fibra Fix, más beneficios y obsequios incluidos en cada opción.
+          </p>
+        </div>
+        <div class="offers-top-benefits">
+          <div class="offer-top-benefit">
+            <div class="offer-top-icon">🚚</div>
+            <div>
+              <strong>Envío gratis</strong>
+              <span>A todo el país</span>
+            </div>
+          </div>
+          <div class="offer-top-benefit">
+            <div class="offer-top-icon">💵</div>
+            <div>
+              <strong>Pago contra entrega</strong>
+              <span>Paga al recibir tu pedido</span>
+            </div>
+          </div>
+          <div class="offer-top-benefit">
+            <div class="offer-top-icon">🛡️</div>
+            <div>
+              <strong>Compra segura</strong>
+              <span>Proceso fácil y confiable</span>
+            </div>
+          </div>
+        </div>
+        <div class="offers-weight-note">
+          <strong>Cada tarro contiene</strong>
+          <span>600 gramos</span>
+          <div class="offers-note-arrow">↘</div>
+        </div>
+        <div class="offers-grid">
+          <article class="offer-card">
+            <div class="offer-card-header">
+              <h3>INICIACIÓN</h3>
+              <span>DA EL PRIMER PASO</span>
+            </div>
+            <div class="offer-product-area">
+              <img
+                alt="Oferta Iniciación Fibra Fix"
+                class="offer-product-image"
+                decoding="async"
+                height="1402"
+                loading="lazy"
+                src="images/oferta1.webp"
+                width="1122"
+              />
+            </div>
+            <div class="offer-price-area">
+              <span class="offer-units"> 1 UNIDAD </span>
+              <div class="offer-price">$79.000</div>
+            </div>
+            <div class="offer-details">
+              <div class="offer-detail">
+                <span class="offer-check">✓</span>
+                <p>
+                  <strong>1 Tarro de Fibra Fix</strong>
+                  (600 g)
+                </p>
+              </div>
+              <div class="offer-detail">
+                <span class="offer-check">✓</span>
+                <p>
+                  PDF:
+                  <strong> Guía de 15 días para perder peso sin Dieta </strong>
+                  <span class="offer-gift"> (Obsequio) </span>
+                </p>
+              </div>
+            </div>
+            <a
+              class="offer-button select-offer"
+              data-offer="iniciacion"
+              href="#pedido"
+            >
+              <span class="offer-cart">🛒</span>
+              <span>Quiero esta oferta</span>
+            </a>
+          </article>
+          <article class="offer-card offer-card-featured">
+            <div class="offer-popular-badge">
+              <span>♛</span>
+              MÁS POPULAR
+            </div>
+            <div class="offer-card-header">
+              <h3>AVANZADO</h3>
+              <span>LA OPCIÓN FAVORITA</span>
+            </div>
+            <div class="offer-product-area">
+              <img
+                alt="Oferta Avanzado Fibra Fix"
+                class="offer-product-image"
+                decoding="async"
+                height="1402"
+                loading="lazy"
+                src="images/oferta2.webp"
+                width="1122"
+              />
+            </div>
+            <div class="offer-price-area">
+              <span class="offer-units"> 2 UNIDADES </span>
+              <div class="offer-price">$112.900</div>
+            </div>
+            <div class="offer-details">
+              <div class="offer-detail">
+                <span class="offer-check">✓</span>
+                <p>
+                  <strong> 2 Tarros de Fibra Fix </strong>
+                  (600 g c/u)
+                </p>
+              </div>
+              <div class="offer-detail">
+                <span class="offer-check">✓</span>
+                <p>
+                  PDF:
+                  <strong> +500 recetas saludables </strong>
+                  <span class="offer-gift"> (Obsequio) </span>
+                </p>
+              </div>
+              <div class="offer-detail">
+                <span class="offer-check">✓</span>
+                <p>
+                  <strong> 2 parches Kinoki relajantes </strong>
+                  <span class="offer-gift"> (Obsequio) </span>
+                </p>
+              </div>
+            </div>
+            <a
+              class="offer-button offer-button-featured select-offer"
+              data-offer="avanzado"
+              href="#pedido"
+            >
+              <span class="offer-cart">🛒</span>
+              <span>Quiero esta oferta</span>
+            </a>
+          </article>
+          <article class="offer-card">
+            <div class="offer-card-header">
+              <h3>TRATAMIENTO COMPLETO</h3>
+              <span>LA OPCIÓN MÁS COMPLETA</span>
+            </div>
+            <div class="offer-product-area">
+              <img
+                alt="Oferta Tratamiento Completo Fibra Fix"
+                class="offer-product-image"
+                decoding="async"
+                height="1402"
+                loading="lazy"
+                src="images/oferta3.webp"
+                width="1122"
+              />
+            </div>
+            <div class="offer-price-area">
+              <span class="offer-units"> 3 UNIDADES </span>
+              <div class="offer-price">$143.900</div>
+            </div>
+            <div class="offer-details">
+              <div class="offer-detail">
+                <span class="offer-check">✓</span>
+                <p>
+                  <strong> 3 Tarros de Fibra Fix </strong>
+                  (600 g c/u)
+                </p>
+              </div>
+              <div class="offer-detail">
+                <span class="offer-check">✓</span>
+                <p>
+                  PDF:
+                  <strong> +500 recetas saludables </strong>
+                  <span class="offer-gift"> (Obsequio) </span>
+                </p>
+              </div>
+              <div class="offer-detail">
+                <span class="offer-check">✓</span>
+                <p>
+                  <strong> 1 caja de 10 parches Kinoki </strong>
+                  <span class="offer-gift"> (Obsequio) </span>
+                </p>
+              </div>
+            </div>
+            <a
+              class="offer-button select-offer"
+              data-offer="completo"
+              href="#pedido"
+            >
+              <span class="offer-cart">🛒</span>
+              <span>Quiero esta oferta</span>
+            </a>
+          </article>
+        </div>
+        <div class="offers-guarantee">
+          <div class="offers-guarantee-icon">
+            <img
+              alt="Compra protegida"
+              class="offers-guarantee-image"
+              decoding="async"
+              height="512"
+              loading="lazy"
+              src="images/proteger.webp"
+              width="512"
+            />
+          </div>
+          <div class="offers-guarantee-content">
+            <span class="offers-guarantee-label"> COMPRA CON CONFIANZA </span>
+            <h3>
+              Garantía de satisfacción
+              <strong>de 30 días</strong>
+            </h3>
+            <p>Si no notas los resultados, te devolvemos tu dinero.</p>
+            <span class="offers-guarantee-note">
+              Sin letra pequeña. Sin complicaciones.
+            </span>
+          </div>
+        </div>
+      </section>
+      <section class="checkout-section" id="pedido">
+        <div class="checkout-container">
+          <div class="checkout-header">
+            <div class="checkout-title-icon">🛒</div>
+            <div>
+              <h2>
+                FINALIZA TU
+                <span>PEDIDO</span>
+              </h2>
+              <p>
+                Estás a un paso de recibir tu Fibra Fix en la puerta de tu casa.
+              </p>
+            </div>
+          </div>
+          <div class="checkout-selected-offer">
+            <div class="checkout-selected-label">
+              <span class="checkout-selected-check">✓</span>
+              TU OFERTA SELECCIONADA
+            </div>
+            <div class="checkout-no-offer" id="checkoutNoOffer">
+              <div class="checkout-no-offer-icon">🛒</div>
+              <div>
+                <strong> Aún no has seleccionado una oferta </strong>
+                <p>
+                  Elige una de las promociones anteriores para continuar con tu
+                  pedido.
+                </p>
+              </div>
+            </div>
+            <div
+              class="checkout-offer-content"
+              hidden=""
+              id="checkoutOfferContent"
+            >
+              <div class="checkout-offer-image-wrapper">
+                <img
+                  alt="Oferta Fibra Fix seleccionada"
+                  class="checkout-offer-image"
+                  id="checkoutOfferImage"
+                  src=""
+                />
+              </div>
+              <div class="checkout-offer-info">
+                <div class="checkout-offer-top">
+                  <div>
+                    <span
+                      class="checkout-popular"
+                      hidden=""
+                      id="checkoutPopular"
+                    >
+                      👑 MÁS POPULAR
+                    </span>
+                    <h3 id="checkoutOfferName">Avanzado</h3>
+                  </div>
+                </div>
+                <ul class="checkout-offer-list" id="checkoutOfferList"></ul>
+              </div>
+            </div>
+          </div>
+          <form class="checkout-form" id="checkoutForm" novalidate="">
+            <input id="selectedOffer" name="oferta" type="hidden" value="" />
+            <input id="selectedPrice" name="precio" type="hidden" value="" />
+            <div class="checkout-step-title">
+              <span>1</span>
+              <div>
+                <h3>Completa tus datos de entrega</h3>
+                <p>Verifica que la información sea correcta.</p>
+              </div>
+            </div>
+            <div class="checkout-fields">
+              <div class="checkout-field checkout-field-full">
+                <label for="checkoutName">
+                  Nombre completo
+                  <span>*</span>
+                </label>
+                <div class="checkout-input-wrapper">
+                  <span class="checkout-input-icon"> 👤 </span>
+                  <input
+                    autocomplete="name"
+                    id="checkoutName"
+                    minlength="3"
+                    name="nombre"
+                    placeholder="Ej: Juan Pérez"
+                    required=""
+                    type="text"
+                  />
+                </div>
+                <small class="checkout-error">
+                  Ingresa tu nombre completo.
+                </small>
+              </div>
+              <div class="checkout-field checkout-field-full">
+                <label for="checkoutWhatsapp">
+                  WhatsApp
+                  <span>*</span>
+                </label>
+                <div class="checkout-input-wrapper">
+                  <span class="checkout-input-icon"> ☎ </span>
+                  <input
+                    autocomplete="tel"
+                    id="checkoutWhatsapp"
+                    inputmode="numeric"
+                    maxlength="15"
+                    minlength="7"
+                    name="whatsapp"
+                    placeholder="Ej: 300 123 4567"
+                    required=""
+                    type="tel"
+                  />
+                </div>
+                <small class="checkout-error">
+                  Ingresa un número de WhatsApp válido.
+                </small>
+              </div>
+              <div class="checkout-field">
+                <label for="checkoutDepartment">
+                  Departamento
+                  <span>*</span>
+                </label>
+                <div class="checkout-input-wrapper">
+                  <span class="checkout-input-icon"> 📍 </span>
+                  <select
+                    id="checkoutDepartment"
+                    name="departamento"
+                    required=""
+                  >
+                    <option value="">Selecciona</option>
+                    <option>Amazonas</option>
+                    <option>Antioquia</option>
+                    <option>Arauca</option>
+                    <option>Atlántico</option>
+                    <option>Bolívar</option>
+                    <option>Boyacá</option>
+                    <option>Caldas</option>
+                    <option>Caquetá</option>
+                    <option>Casanare</option>
+                    <option>Cauca</option>
+                    <option>Cesar</option>
+                    <option>Chocó</option>
+                    <option>Córdoba</option>
+                    <option>Cundinamarca</option>
+                    <option>Guainía</option>
+                    <option>Guaviare</option>
+                    <option>Huila</option>
+                    <option>La Guajira</option>
+                    <option>Magdalena</option>
+                    <option>Meta</option>
+                    <option>Nariño</option>
+                    <option>Norte de Santander</option>
+                    <option>Putumayo</option>
+                    <option>Quindío</option>
+                    <option>Risaralda</option>
+                    <option>San Andrés y Providencia</option>
+                    <option>Santander</option>
+                    <option>Sucre</option>
+                    <option>Tolima</option>
+                    <option>Valle del Cauca</option>
+                    <option>Vaupés</option>
+                    <option>Vichada</option>
+                    <option>Bogotá D.C.</option>
+                  </select>
+                </div>
+                <small class="checkout-error">
+                  Selecciona tu departamento.
+                </small>
+              </div>
+              <div class="checkout-field">
+                <label for="checkoutCity">
+                  Ciudad
+                  <span>*</span>
+                </label>
+                <div class="checkout-input-wrapper">
+                  <span class="checkout-input-icon"> 🏢 </span>
+                  <input
+                    autocomplete="address-level2"
+                    id="checkoutCity"
+                    minlength="2"
+                    name="ciudad"
+                    placeholder="Ej: Bucaramanga"
+                    required=""
+                    type="text"
+                  />
+                </div>
+                <small class="checkout-error"> Ingresa tu ciudad. </small>
+              </div>
+              <div class="checkout-field checkout-field-full">
+                <label for="checkoutAddress">
+                  Dirección de entrega exacta
+                  <span>*</span>
+                </label>
+                <div class="checkout-input-wrapper checkout-address-wrapper">
+                  <span class="checkout-input-icon"> 🏠 </span>
+                  <input
+                    autocomplete="street-address"
+                    id="checkoutAddress"
+                    minlength="8"
+                    name="direccion"
+                    placeholder="Barrio, calle, número, apto y referencia"
+                    required=""
+                    type="text"
+                  />
+                </div>
+                <small class="checkout-error">
+                  Escribe una dirección de entrega completa.
+                </small>
+              </div>
+            </div>
+            <div class="checkout-step-title checkout-step-order">
+              <span>2</span>
+              <div>
+                <h3>Tu pedido</h3>
+              </div>
+            </div>
+            <div class="checkout-total-card">
+              <div class="checkout-total-main">
+                <span> Total a pagar </span>
+                <strong id="checkoutTotal"> $0 </strong>
+              </div>
+              <div class="checkout-total-benefits">
+                <div>
+                  <span>🚚</span>
+                  <p>
+                    <strong>Envío gratis</strong>
+                    A todo el país
+                  </p>
+                </div>
+                <div>
+                  <span>💵</span>
+                  <p>
+                    <strong>Pago contra entrega</strong>
+                    Paga al recibir
+                  </p>
+                </div>
+              </div>
+            </div>
+            <button
+              class="checkout-submit"
+              disabled=""
+              id="checkoutSubmit"
+              type="submit"
+            >
+              <span class="checkout-submit-icon"> 🚚 </span>
+              <span> Pedir Ahora Contra Entrega </span>
+              <span class="checkout-submit-arrow"> → </span>
+            </button>
+            <div class="checkout-privacy">
+              <span>🔒</span>
+              <p>
+                Tus datos están protegidos y solo se usarán para gestionar la
+                entrega de tu pedido.
+              </p>
+            </div>
+            <div class="checkout-warning" id="checkoutWarning">
+              Selecciona primero una oferta para realizar tu pedido.
+            </div>
+          </form>
+        </div>
+      </section>
+      <section
+        class="order-confirmation-section"
+        hidden=""
+        id="orderConfirmation"
+      >
+        <div class="order-confirmation-container">
+          <div class="confirmation-success">
+            <div class="confirmation-check">✓</div>
+            <h2>
+              ¡Pedido Confirmado
+              <span>Exitosamente!</span>
+            </h2>
+            <strong> Gracias por confiar en Fibra Fix. </strong>
+            <p>
+              Hemos recibido tu pedido y pronto nos comunicaremos contigo por
+              WhatsApp para confirmar la entrega.
+            </p>
+          </div>
+          <div class="confirmation-card confirmation-order-card">
+            <div class="confirmation-card-title">
+              <span class="confirmation-title-icon"> 🛒 </span>
+              <h3>Resumen de tu pedido</h3>
+            </div>
+            <div class="confirmation-order-content">
+              <div class="confirmation-product-image-wrapper">
+                <img
+                  alt="Oferta Fibra Fix"
+                  class="confirmation-product-image"
+                  id="confirmationOfferImage"
+                  src=""
+                />
+              </div>
+              <div class="confirmation-product-info">
+                <span
+                  class="confirmation-popular"
+                  hidden=""
+                  id="confirmationPopular"
+                >
+                  👑 MÁS POPULAR
+                </span>
+                <span class="confirmation-offer-label"> TU OFERTA </span>
+                <h3 id="confirmationOfferName">Oferta seleccionada</h3>
+                <ul
+                  class="confirmation-offer-list"
+                  id="confirmationOfferList"
+                ></ul>
+              </div>
+            </div>
+          </div>
+          <div class="confirmation-card confirmation-customer-card">
+            <div class="confirmation-card-title">
+              <span class="confirmation-title-icon"> 👤 </span>
+              <h3>Tus datos de entrega</h3>
+            </div>
+            <div class="confirmation-customer-list">
+              <div class="confirmation-customer-row">
+                <span class="confirmation-customer-icon"> 👤 </span>
+                <span id="confirmationName"> Nombre del cliente </span>
+              </div>
+              <div class="confirmation-customer-row">
+                <span class="confirmation-customer-icon"> 📱 </span>
+                <span id="confirmationWhatsapp"> Número de WhatsApp </span>
+              </div>
+              <div class="confirmation-customer-row">
+                <span class="confirmation-customer-icon"> 📍 </span>
+                <span id="confirmationLocation"> Ciudad, Departamento </span>
+              </div>
+              <div class="confirmation-customer-row">
+                <span class="confirmation-customer-icon"> 🏠 </span>
+                <span id="confirmationAddress"> Dirección de entrega </span>
+              </div>
+            </div>
+          </div>
+          <div class="confirmation-total-card">
+            <div class="confirmation-total">
+              <span> Total a pagar </span>
+              <strong id="confirmationTotal"> $0 </strong>
+            </div>
+            <div class="confirmation-payment">
+              <span class="confirmation-payment-icon"> 🚚 </span>
+              <div>
+                <strong> Pago contra entrega </strong>
+                <span>
+                  Paga al recibir tu pedido en la puerta de tu casa.
+                </span>
+              </div>
+            </div>
+          </div>
+          <a
+            class="confirmation-home-button"
+            href="#inicio"
+            id="confirmationHomeButton"
+          >
+            <span>⌂</span>
+            <strong> Volver al inicio </strong>
+          </a>
+          <div class="confirmation-privacy">
+            <span> 🔒 </span>
+            <p>
+              Tus datos están protegidos y solo se usarán para gestionar la
+              entrega.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="faq-section" id="preguntas-frecuentes">
+        <div class="faq-container">
+          <div class="faq-header">
+            <span class="faq-badge">PREGUNTAS FRECUENTES</span>
+            <h2>Resolvemos tus dudas</h2>
+            <h3>Todo lo que <span>necesitas saber</span> sobre FibraFix</h3>
+            <p>
+              Si tienes otra pregunta, no dudes en contactarnos por WhatsApp.
+            </p>
+          </div>
+          <div class="faq-list">
+            <div class="faq-item active">
+              <button class="faq-question" type="button">
+                <span class="faq-number"> 1 </span>
+                <span class="faq-question-text">
+                  ¿Qué es FibraFix y para qué sirve?
+                </span>
+                <span class="faq-icon"> − </span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-content">
+                  <p>
+                    FibraFix es un suplemento de fibra formulado con
+                    ingredientes de origen natural, además de probióticos y
+                    prebióticos. Combate estreñimineto, pesadez, inflamacion,
+                    transito lento, mal aliento, colicos y mas.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" type="button">
+                <span class="faq-number"> 2 </span>
+                <span class="faq-question-text"> ¿Cómo se debe consumir? </span>
+                <span class="faq-icon"> + </span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-content">
+                  <p>
+                    Prepara FibraFix consumiendolo 1 o 2 veces por dia, 30
+                    minutos antes del desayuno y/o almuerzo. Se recomienda un
+                    scoop en un vaso de agua y mezclar. Tomar suficiente agua
+                    durante el dia.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" type="button">
+                <span class="faq-number"> 3 </span>
+                <span class="faq-question-text">
+                  ¿Cuánto tiempo tarda en notarse la diferencia?
+                </span>
+                <span class="faq-icon"> + </span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-content">
+                  <p>
+                    Nuestros clientes empiezan a ver los resultados a partir de
+                    la primera semana. pesadez, inflamacion gases, estreñimiento
+                    se iran regulando progresivamente.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" type="button">
+                <span class="faq-number"> 4 </span>
+                <span class="faq-question-text">
+                  ¿Tiene efectos secundarios?
+                </span>
+                <span class="faq-icon"> + </span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-content">
+                  <p>
+                    No, no tiene efectos seundarios.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" type="button">
+                <span class="faq-number"> 5 </span>
+                <span class="faq-question-text"> ¿Tiene registro INVIMA? </span>
+                <span class="faq-icon"> + </span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-content">
+                  <p>
+                    Sí. FibraFix cuenta con registro INVIMA
+                    <strong>RSA-0020303-2022</strong>.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" type="button">
+                <span class="faq-number"> 6 </span>
+                <span class="faq-question-text">
+                  ¿Realizan envíos a todo el país?
+                </span>
+                <span class="faq-icon"> + </span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-content">
+                  <p>
+                    Realizamos envíos a diferentes ciudades y municipios de
+                    Colombia. La disponibilidad de entrega puede depender de la
+                    cobertura de la transportadora.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" type="button">
+                <span class="faq-number"> 7 </span>
+                <span class="faq-question-text">
+                  ¿Qué métodos de pago aceptan?
+                </span>
+                <span class="faq-icon"> + </span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-content">
+                  <p>
+                    Puedes realizar tu pedido con pago contra entrega, según
+                    disponibilidad y cobertura en tu ubicación.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="faq-whatsapp">
+            <div class="faq-whatsapp-left">
+              <div class="faq-whatsapp-icon">☎</div>
+              <div class="faq-whatsapp-copy">
+                <h3>¿Tienes más preguntas?</h3>
+                <p>Escríbenos por WhatsApp y con gusto te asesoramos.</p>
+              </div>
+            </div>
+            <a
+              class="faq-whatsapp-button"
+              href="https://wa.link/3yocf2"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <span>ESCRIBIR AHORA</span>
+              <span class="faq-whatsapp-arrow">›</span>
+            </a>
+          </div>
+          <footer class="faq-footer">
+            <div class="faq-footer-line"></div>
+            <div class="faq-footer-content">
+              <img
+                alt="Fibra Fix"
+                class="faq-footer-logo"
+                decoding="async"
+                height="4500"
+                loading="lazy"
+                src="images/logo-fibrafix.webp"
+                width="8000"
+              />
+              <p>Todos los derechos reservados FibraFix © 2026</p>
+            </div>
+          </footer>
+        </div>
+      </section>
+      <div
+        aria-atomic="true"
+        aria-live="polite"
+        class="purchase-notification"
+        id="purchaseNotification"
+      >
+        <button
+          aria-label="Cerrar notificación"
+          class="purchase-notification-close"
+          id="purchaseNotificationClose"
+          type="button"
+        >
+          ×
+        </button>
+        <div class="purchase-notification-product">
+          <img
+            alt="Fibra Fix"
+            class="purchase-notification-image"
+            decoding="async"
+            height="1000"
+            loading="lazy"
+            src="images/fibrafixsinFondo.webp"
+            width="1000"
+          />
+          <span class="purchase-notification-check"> ✓ </span>
+        </div>
+        <div class="purchase-notification-content">
+          <strong
+            class="purchase-notification-name"
+            id="purchaseNotificationName"
+          >
+            Martín Velandia
+          </strong>
+          <span
+            class="purchase-notification-city"
+            id="purchaseNotificationCity"
+          >
+            de Cúcuta
+          </span>
+          <p class="purchase-notification-order" id="purchaseNotificationOrder">
+            compró 3 tarros de Fibra Fix
+          </p>
+          <div class="purchase-notification-bottom">
+            <span
+              class="purchase-notification-time"
+              id="purchaseNotificationTime"
+            >
+              Hace 5 minutos
+            </span>
+            <span
+              class="purchase-notification-status"
+              id="purchaseNotificationStatus"
+            >
+              Compra reciente
+            </span>
+          </div>
+        </div>
+      </div>
+      <script defer="" src="js/script.js"></script>
+    </main>
+  </body>
+</html>
