@@ -2198,518 +2198,6 @@ a {
     height: 225px;
   }
 }
-.wellness-cta-section {
-  position: relative;
-  padding: 65px 20px;
-  overflow: hidden;
-  background: linear-gradient(180deg, #ffffff 0%, #fbfdf8 100%);
-}
-.wellness-cta-container {
-  position: relative;
-  width: min(1400px, 100%);
-  min-height: 420px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 0.78fr 0.92fr;
-  align-items: center;
-  gap: 20px;
-  padding: 45px 55px;
-  overflow: visible;
-  border: 1px solid rgba(74, 135, 42, 0.16);
-  border-radius: 42px;
-  background:
-    radial-gradient(
-      circle at 50% 50%,
-      rgba(202, 240, 122, 0.35),
-      transparent 28%
-    ),
-    radial-gradient(
-      circle at 12% 30%,
-      rgba(255, 255, 255, 0.95),
-      transparent 38%
-    ),
-    linear-gradient(115deg, #f8fde9 0%, #edf9d2 45%, #f7ffe9 100%);
-  box-shadow:
-    0 30px 80px rgba(23, 83, 38, 0.13),
-    inset 0 1px 0 rgba(255, 255, 255, 0.95);
-  isolation: isolate;
-}
-.wellness-cta-container::before {
-  content: "";
-  position: absolute;
-  width: 650px;
-  height: 300px;
-  top: -190px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 0.95),
-    transparent 68%
-  );
-  pointer-events: none;
-  z-index: -1;
-}
-.wellness-cta-container::after {
-  content: "";
-  position: absolute;
-  width: 90%;
-  height: 35px;
-  left: 5%;
-  bottom: -18px;
-  border-radius: 50%;
-  background: rgba(26, 82, 36, 0.1);
-  filter: blur(20px);
-  z-index: -2;
-}
-.wellness-leaf {
-  position: absolute;
-  z-index: 1;
-  width: 210px;
-  pointer-events: none;
-  user-select: none;
-  opacity: 0.92;
-  filter: drop-shadow(0 14px 16px rgba(24, 75, 31, 0.13));
-}
-.wellness-leaf-left {
-  left: -80px;
-  bottom: -70px;
-  transform: rotate(-18deg);
-}
-.wellness-leaf-right {
-  right: -85px;
-  top: -65px;
-  transform: rotate(155deg);
-}
-.wellness-cta-copy {
-  position: relative;
-  z-index: 5;
-}
-.wellness-mini-badge {
-  display: inline-flex;
-  align-items: center;
-  margin-bottom: 18px;
-  padding: 9px 17px;
-  border: 1px solid rgba(40, 122, 52, 0.12);
-  border-radius: 50px;
-  background: rgba(255, 255, 255, 0.72);
-  color: #397a39;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 1.3px;
-  box-shadow: 0 8px 20px rgba(29, 82, 37, 0.06);
-  backdrop-filter: blur(7px);
-}
-.wellness-cta-copy h2 {
-  max-width: 540px;
-  margin: 0;
-  color: #063f2c;
-  font-size: clamp(40px, 4vw, 61px);
-  font-weight: 900;
-  line-height: 1.02;
-  letter-spacing: -2.8px;
-}
-.wellness-cta-copy h2 span {
-  display: block;
-  color: #ff6500;
-  text-shadow: 0 3px 10px rgba(255, 101, 0, 0.1);
-}
-.wellness-cta-product {
-  position: relative;
-  z-index: 8;
-  min-height: 350px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.wellness-product-halo {
-  position: absolute;
-  width: 360px;
-  height: 360px;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(200, 242, 105, 0.82) 0%,
-    rgba(221, 248, 165, 0.45) 36%,
-    rgba(234, 253, 198, 0.18) 55%,
-    transparent 72%
-  );
-  filter: blur(1px);
-  z-index: 1;
-}
-.wellness-product-ring {
-  position: absolute;
-  border: 1px solid rgba(93, 167, 53, 0.22);
-  border-radius: 50%;
-  z-index: 2;
-}
-.wellness-product-ring-one {
-  width: 300px;
-  height: 300px;
-}
-.wellness-product-ring-two {
-  width: 385px;
-  height: 385px;
-  border-color: rgba(132, 193, 61, 0.1);
-}
-.wellness-product-image {
-  position: relative;
-  z-index: 10;
-  width: 390px;
-  max-width: none;
-  object-fit: contain;
-  transform: translateY(-5px) scale(1.04);
-  filter: drop-shadow(0 28px 25px rgba(23, 72, 28, 0.24))
-    drop-shadow(0 8px 10px rgba(0, 0, 0, 0.08));
-}
-.wellness-cta-action {
-  position: relative;
-  z-index: 7;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-  text-align: center;
-}
-.wellness-days {
-  position: relative;
-  min-width: 310px;
-  padding: 22px 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 28px;
-  background: linear-gradient(
-    145deg,
-    rgba(255, 255, 255, 0.65),
-    rgba(235, 250, 199, 0.72)
-  );
-  border: 1px solid rgba(90, 155, 46, 0.13);
-  box-shadow: 0 15px 35px rgba(41, 92, 38, 0.08);
-  backdrop-filter: blur(8px);
-}
-.wellness-days-small {
-  color: #07562d;
-  font-size: 23px;
-  font-weight: 800;
-  line-height: 1.1;
-}
-.wellness-days strong {
-  margin-top: 4px;
-  color: #ff6500;
-  font-size: clamp(63px, 6vw, 91px);
-  font-weight: 900;
-  line-height: 0.95;
-  letter-spacing: -4px;
-  text-shadow: 0 6px 13px rgba(255, 101, 0, 0.12);
-}
-.wellness-days-decoration {
-  position: relative;
-  width: 175px;
-  height: 13px;
-  margin-top: 7px;
-}
-.wellness-days-decoration span {
-  position: absolute;
-  left: 0;
-  top: 2px;
-  width: 100%;
-  height: 5px;
-  border-radius: 100%;
-  background: linear-gradient(90deg, #86bd38, #4b9828);
-  transform: rotate(-3deg);
-}
-.wellness-offer-button {
-  position: relative;
-  width: 100%;
-  max-width: 470px;
-  min-height: 88px;
-  padding: 14px 15px 14px 32px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 15px;
-  border: 2px solid rgba(255, 255, 255, 0.38);
-  border-radius: 60px;
-  background: linear-gradient(180deg, #ff8a13 0%, #ff6500 48%, #dc4200 100%);
-  color: #ffffff;
-  text-decoration: none;
-  overflow: hidden;
-  box-shadow:
-    0 8px 0 #b93700,
-    0 17px 25px rgba(211, 66, 0, 0.27),
-    inset 0 2px 2px rgba(255, 255, 255, 0.38);
-  transform: translateY(0);
-  animation: wellnessButtonBounce 3s ease-in-out infinite;
-  transition:
-    transform 0.18s ease,
-    box-shadow 0.18s ease;
-}
-.wellness-offer-button::before {
-  content: "";
-  position: absolute;
-  width: 45%;
-  height: 220%;
-  top: -60%;
-  left: -55%;
-  transform: rotate(20deg);
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.24),
-    transparent
-  );
-  animation: wellnessButtonShine 4.5s ease-in-out infinite;
-}
-.wellness-offer-text {
-  position: relative;
-  z-index: 2;
-  flex: 1;
-  text-align: center;
-  font-size: 23px;
-  font-weight: 900;
-  letter-spacing: 0.3px;
-  text-shadow: 0 2px 2px rgba(128, 35, 0, 0.25);
-}
-.wellness-offer-arrow {
-  position: relative;
-  z-index: 2;
-  width: 57px;
-  height: 57px;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: linear-gradient(180deg, #ffffff, #fff2e8);
-  color: #ff6500;
-  font-size: 42px;
-  font-weight: 700;
-  line-height: 1;
-  box-shadow:
-    0 4px 0 rgba(176, 51, 0, 0.25),
-    0 6px 15px rgba(100, 32, 0, 0.12);
-}
-.wellness-offer-button:hover {
-  transform: translateY(-4px) scale(1.02);
-  box-shadow:
-    0 10px 0 #b93700,
-    0 22px 32px rgba(211, 66, 0, 0.32),
-    inset 0 2px 2px rgba(255, 255, 255, 0.4);
-}
-.wellness-offer-button:active {
-  transform: translateY(5px) scale(0.99);
-  box-shadow:
-    0 3px 0 #b93700,
-    0 9px 15px rgba(211, 66, 0, 0.22);
-}
-@keyframes wellnessButtonBounce {
-  0%,
-  84%,
-  100% {
-    transform: translateY(0);
-  }
-  89% {
-    transform: translateY(-6px);
-  }
-  93% {
-    transform: translateY(0);
-  }
-  96% {
-    transform: translateY(-3px);
-  }
-}
-@keyframes wellnessButtonShine {
-  0%,
-  68% {
-    left: -55%;
-  }
-  82% {
-    left: 120%;
-  }
-  100% {
-    left: 120%;
-  }
-}
-@media (max-width: 1024px) {
-  .wellness-cta-section {
-    padding: 50px 18px;
-  }
-  .wellness-cta-container {
-    grid-template-columns: 1fr 0.9fr;
-    min-height: 520px;
-    padding: 40px 38px;
-    gap: 10px;
-  }
-  .wellness-cta-copy {
-    grid-column: 1;
-    grid-row: 1;
-  }
-  .wellness-cta-product {
-    grid-column: 2;
-    grid-row: 1 / span 2;
-    min-height: 440px;
-  }
-  .wellness-cta-action {
-    grid-column: 1;
-    grid-row: 2;
-    align-items: flex-start;
-    text-align: left;
-  }
-  .wellness-days {
-    align-items: flex-start;
-    min-width: 320px;
-  }
-  .wellness-product-image {
-    width: 390px;
-  }
-  .wellness-product-halo {
-    width: 330px;
-    height: 330px;
-  }
-  .wellness-product-ring-one {
-    width: 280px;
-    height: 280px;
-  }
-  .wellness-product-ring-two {
-    width: 350px;
-    height: 350px;
-  }
-  .wellness-offer-button {
-    max-width: 410px;
-  }
-}
-@media (max-width: 768px) {
-  .wellness-cta-section {
-    padding: 38px 13px;
-  }
-  .wellness-cta-container {
-    display: flex;
-    flex-direction: column;
-    min-height: auto;
-    padding: 34px 18px 30px;
-    gap: 15px;
-    border-radius: 30px;
-    text-align: center;
-  }
-  .wellness-mini-badge {
-    margin-bottom: 14px;
-    font-size: 9px;
-  }
-  .wellness-cta-copy h2 {
-    max-width: 100%;
-    font-size: 38px;
-    line-height: 1.04;
-    letter-spacing: -1.8px;
-  }
-  .wellness-cta-product {
-    width: 100%;
-    min-height: 355px;
-    margin: -5px 0 -10px;
-  }
-  .wellness-product-image {
-    width: 355px;
-    transform: translateY(0) scale(1.05);
-  }
-  .wellness-product-halo {
-    width: 290px;
-    height: 290px;
-  }
-  .wellness-product-ring-one {
-    width: 250px;
-    height: 250px;
-  }
-  .wellness-product-ring-two {
-    width: 315px;
-    height: 315px;
-  }
-  .wellness-cta-action {
-    width: 100%;
-    align-items: center;
-    gap: 24px;
-  }
-  .wellness-days {
-    width: 100%;
-    min-width: 0;
-    padding: 18px 15px;
-    align-items: center;
-  }
-  .wellness-days-small {
-    font-size: 20px;
-  }
-  .wellness-days strong {
-    font-size: 66px;
-  }
-  .wellness-offer-button {
-    width: min(100%, 390px);
-    min-height: 74px;
-    padding: 10px 11px 10px 23px;
-  }
-  .wellness-offer-text {
-    font-size: 18px;
-  }
-  .wellness-offer-arrow {
-    width: 49px;
-    height: 49px;
-    font-size: 35px;
-  }
-  .wellness-leaf {
-    width: 135px;
-    opacity: 0.65;
-  }
-}
-@media (max-width: 430px) {
-  .wellness-cta-container {
-    padding: 30px 14px 27px;
-  }
-  .wellness-cta-copy h2 {
-    font-size: 31px;
-    letter-spacing: -1.3px;
-  }
-  .wellness-cta-product {
-    min-height: 305px;
-  }
-  .wellness-product-image {
-    width: 310px;
-  }
-  .wellness-product-halo {
-    width: 245px;
-    height: 245px;
-  }
-  .wellness-product-ring-one {
-    width: 215px;
-    height: 215px;
-  }
-  .wellness-product-ring-two {
-    width: 270px;
-    height: 270px;
-  }
-  .wellness-days-small {
-    font-size: 18px;
-  }
-  .wellness-days strong {
-    font-size: 58px;
-  }
-  .wellness-offer-button {
-    min-height: 68px;
-  }
-  .wellness-offer-text {
-    font-size: 16px;
-  }
-  .wellness-offer-arrow {
-    width: 45px;
-    height: 45px;
-    font-size: 32px;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .wellness-offer-button,
-  .wellness-offer-button::before {
-    animation: none;
-  }
-}
 .testimonials-section {
   position: relative;
   padding: 95px 20px 90px;
@@ -5483,122 +4971,624 @@ a {
     contain-intrinsic-size: 1px 900px;
   }
 }
-/* Banner wellness: restaurado tras optimizacion LCP. No usa hojas.png/hojas.webp. */
-.wellness-cta-section {
-  content-visibility: visible !important;
-  contain: none !important;
-  padding: 65px 20px !important;
+/* =========================================
+   MÉTODO FIBRA FIX 21 DÍAS
+   Sección insertada después de testimonios
+   ========================================= */
+ .method-showcase-section {
+  position: relative;
+  overflow: hidden;
+  padding: 82px 30px 88px;
+  background:
+    radial-gradient(circle at 78% 42%, rgba(198, 230, 104, 0.48), transparent 34%),
+    radial-gradient(circle at 12% 16%, rgba(255, 255, 255, 0.98), transparent 34%),
+    linear-gradient(110deg, #fffdf3 0%, #fbfbea 48%, #eef8dc 100%);
 }
-.wellness-cta-container {
-  min-height: 420px !important;
-  padding: 45px 55px !important;
-  grid-template-columns: 1fr 0.78fr 0.92fr !important;
-  gap: 20px !important;
+
+.method-showcase-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 0.94fr) minmax(0, 1.06fr);
+  align-items: center;
+  gap: 46px;
 }
-.wellness-cta-product {
-  min-height: 350px !important;
+
+.method-showcase-copy {
+  min-width: 0;
+  max-width: 660px;
 }
-.wellness-product-image {
-  width: 390px !important;
-  max-width: none !important;
-  height: auto !important;
-  transform: translateY(-5px) scale(1.04) !important;
+
+.method-showcase-copy h2 {
+  margin: 0 0 24px;
+  color: #064925;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: clamp(48px, 5.2vw, 76px);
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -3.5px;
 }
-.wellness-product-halo {
-  width: 360px !important;
-  height: 360px !important;
+
+.method-showcase-copy h2 span {
+  display: block;
+  margin-top: 7px;
+  color: #ff6500;
 }
-.wellness-product-ring-one {
-  width: 300px !important;
-  height: 300px !important;
+
+.method-showcase-lead {
+  max-width: 625px;
+  margin: 0 0 30px;
+  color: #354038;
+  font-size: 18px;
+  line-height: 1.55;
 }
-.wellness-product-ring-two {
-  width: 385px !important;
-  height: 385px !important;
+
+.method-showcase-lead strong {
+  color: #173f29;
+  font-weight: 800;
 }
-@media (max-width: 1024px) {
-  .wellness-cta-section {
-    padding: 50px 18px !important;
+
+.method-showcase-benefits {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0 0 30px;
+}
+
+.method-showcase-benefit {
+  min-height: 104px;
+  padding: 15px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid rgba(11, 61, 36, 0.08);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 10px 26px rgba(26, 70, 39, 0.07);
+}
+
+.method-showcase-benefit-icon {
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.method-showcase-benefit strong {
+  color: #163c26;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.24;
+}
+
+.method-showcase-cta {
+  width: fit-content;
+  min-height: 54px;
+  padding: 0 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #0b7a35 0%, #15933e 100%);
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 800;
+  box-shadow: 0 12px 28px rgba(13, 121, 52, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.method-showcase-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(13, 121, 52, 0.25);
+}
+
+.method-showcase-cta span {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.method-showcase-visual {
+  position: relative;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.method-showcase-picture {
+  width: 100%;
+  max-width: 860px;
+  display: block;
+}
+
+.method-showcase-picture img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 1180px) {
+  .method-showcase-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
   }
-  .wellness-cta-container {
-    grid-template-columns: 1fr 0.9fr !important;
-    min-height: 520px !important;
-    padding: 40px 38px !important;
-    gap: 10px !important;
+
+  .method-showcase-benefit {
+    padding: 13px 12px;
   }
-  .wellness-cta-product {
-    min-height: 440px !important;
-  }
-  .wellness-product-image {
-    width: 390px !important;
-  }
-  .wellness-product-halo {
-    width: 330px !important;
-    height: 330px !important;
-  }
-  .wellness-product-ring-one {
-    width: 280px !important;
-    height: 280px !important;
-  }
-  .wellness-product-ring-two {
-    width: 350px !important;
-    height: 350px !important;
+
+  .method-showcase-benefit-icon {
+    flex-basis: 44px;
+    width: 44px;
+    height: 44px;
   }
 }
-@media (max-width: 768px) {
-  .wellness-cta-section {
-    padding: 38px 13px !important;
+
+@media (max-width: 900px) {
+  .method-showcase-section {
+    padding: 62px 22px 68px;
   }
-  .wellness-cta-container {
-    display: flex !important;
-    flex-direction: column !important;
-    min-height: auto !important;
-    padding: 34px 18px 30px !important;
-    gap: 15px !important;
+
+  .method-showcase-container {
+    grid-template-columns: 1fr;
+    gap: 34px;
   }
-  .wellness-cta-product {
-    width: 100% !important;
-    min-height: 355px !important;
-    margin: -5px 0 -10px !important;
+
+  .method-showcase-copy {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
   }
-  .wellness-product-image {
-    width: 355px !important;
-    height: auto !important;
-    transform: translateY(0) scale(1.05) !important;
+
+  .method-showcase-copy h2 {
+    letter-spacing: -2.5px;
   }
-  .wellness-product-halo {
-    width: 290px !important;
-    height: 290px !important;
+
+  .method-showcase-lead {
+    margin-left: auto;
+    margin-right: auto;
   }
-  .wellness-product-ring-one {
-    width: 250px !important;
-    height: 250px !important;
+
+  .method-showcase-benefits {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
   }
-  .wellness-product-ring-two {
-    width: 315px !important;
-    height: 315px !important;
+
+  .method-showcase-benefit {
+    text-align: left;
+  }
+
+  .method-showcase-cta {
+    margin: 0 auto;
+  }
+
+  .method-showcase-visual {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
   }
 }
+
+@media (max-width: 620px) {
+  .method-showcase-section {
+    padding: 48px 14px 54px;
+  }
+
+  .method-showcase-copy h2 {
+    margin-bottom: 18px;
+    font-size: clamp(42px, 12vw, 58px);
+    line-height: 1;
+    letter-spacing: -2.3px;
+  }
+
+  .method-showcase-lead {
+    margin-bottom: 24px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .method-showcase-benefits {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+    margin-bottom: 24px;
+  }
+
+  .method-showcase-benefit {
+    min-height: 88px;
+    padding: 12px 10px;
+    gap: 9px;
+    border-radius: 15px;
+  }
+
+  .method-showcase-benefit-icon {
+    flex-basis: 40px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .method-showcase-benefit strong {
+    font-size: 12px;
+  }
+
+  .method-showcase-cta {
+    width: 100%;
+    min-height: 56px;
+  }
+}
+
 @media (max-width: 430px) {
-  .wellness-cta-container {
-    padding: 30px 14px 27px !important;
+  .method-showcase-section {
+    padding-left: 12px;
+    padding-right: 12px;
   }
-  .wellness-cta-product {
-    min-height: 305px !important;
+
+  .method-showcase-copy h2 {
+    font-size: clamp(39px, 11.5vw, 49px);
   }
-  .wellness-product-image {
-    width: 310px !important;
+
+  .method-showcase-benefit {
+    min-height: 82px;
   }
-  .wellness-product-halo {
-    width: 245px !important;
-    height: 245px !important;
+}
+
+
+
+.how-it-works-section {
+  position: relative;
+  overflow: hidden;
+  padding: 56px 30px 70px;
+  background:
+    radial-gradient(circle at 14% 20%, rgba(243, 251, 219, 0.92), transparent 28%),
+    radial-gradient(circle at 82% 18%, rgba(235, 247, 205, 0.9), transparent 30%),
+    linear-gradient(180deg, #fffef8 0%, #fbfbe9 46%, #f4f8e5 100%);
+}
+
+.how-it-works-container {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.how-it-works-header {
+  max-width: 940px;
+  margin: 0 auto 28px;
+  text-align: center;
+}
+
+.how-it-works-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 24px;
+  border: 2px solid #b7de67;
+  border-radius: 999px;
+  color: #103f26;
+  background: rgba(255, 253, 244, 0.88);
+  font-size: 15px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.how-it-works-badge img {
+  width: 22px;
+  height: 22px;
+}
+
+.how-it-works-header h2 {
+  margin: 18px 0 10px;
+  color: #064925;
+  font-size: clamp(44px, 4.8vw, 86px);
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -3.4px;
+}
+
+.how-it-works-header h2 span {
+  color: #ff6500;
+}
+
+.how-it-works-header p {
+  max-width: 900px;
+  margin: 0 auto;
+  color: #31443b;
+  font-size: 17px;
+  line-height: 1.45;
+}
+
+.how-it-works-flow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 58px minmax(0, 1fr) 58px minmax(0, 1fr) 58px minmax(0, 1fr);
+  align-items: stretch;
+  gap: 0;
+  margin-top: 26px;
+}
+
+.how-it-works-card {
+  position: relative;
+  min-width: 0;
+  min-height: 360px;
+  padding: 28px 22px 18px;
+  border: 1px solid rgba(15, 78, 38, 0.08);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 16px 36px rgba(23, 73, 41, 0.07);
+  text-align: center;
+}
+
+.how-it-works-number {
+  width: 72px;
+  height: 72px;
+  margin: -10px auto 14px;
+  display: grid;
+  place-items: center;
+  border: 4px solid #eaf4ce;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #55ba3f 0%, #2d972d 100%);
+  box-shadow: 0 8px 18px rgba(45, 151, 45, 0.22);
+  color: #fff;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.how-it-works-card h3 {
+  margin: 0 0 10px;
+  color: #123d27;
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 1.06;
+}
+
+.how-it-works-card p {
+  max-width: 250px;
+  margin: 0 auto;
+  color: #425248;
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+.how-it-works-illustration {
+  width: min(100%, 220px);
+  height: auto;
+  margin: 16px auto 0;
+}
+
+.how-it-works-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.how-it-works-arrow img {
+  width: 40px;
+  height: 40px;
+}
+
+.how-it-works-club {
+  margin-top: 18px;
+  padding: 22px 26px;
+  display: grid;
+  grid-template-columns: 168px minmax(0, 1.2fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 20px;
+  border: 1px solid rgba(212, 228, 162, 0.85);
+  border-radius: 28px;
+  background: linear-gradient(180deg, rgba(255, 249, 229, 0.94) 0%, rgba(249, 251, 229, 0.98) 100%);
+  box-shadow: 0 14px 30px rgba(23, 73, 41, 0.05);
+}
+
+.how-it-works-club-gift img {
+  width: 132px;
+  height: auto;
+}
+
+.how-it-works-club-copy h3 {
+  margin: 0 0 8px;
+  color: #123d27;
+  font-size: clamp(30px, 2.4vw, 48px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -1.6px;
+}
+
+.how-it-works-club-copy h3 span {
+  color: #ff6500;
+}
+
+.how-it-works-club-copy p {
+  margin: 0;
+  color: #31443b;
+  font-size: 18px;
+  line-height: 1.35;
+}
+
+.how-it-works-club-benefits {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  align-items: center;
+}
+
+.how-it-works-club-item {
+  min-width: 0;
+  text-align: center;
+}
+
+.how-it-works-club-item img {
+  width: 74px;
+  height: 74px;
+  margin: 0 auto 10px;
+}
+
+.how-it-works-club-item strong {
+  display: block;
+  color: #163c26;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.12;
+}
+
+@media (max-width: 1180px) {
+  .how-it-works-flow {
+    grid-template-columns: minmax(0, 1fr) 40px minmax(0, 1fr) 40px minmax(0, 1fr) 40px minmax(0, 1fr);
   }
-  .wellness-product-ring-one {
-    width: 215px !important;
-    height: 215px !important;
+
+  .how-it-works-card {
+    min-height: 335px;
+    padding-left: 18px;
+    padding-right: 18px;
   }
-  .wellness-product-ring-two {
-    width: 270px !important;
-    height: 270px !important;
+
+  .how-it-works-card h3 {
+    font-size: 23px;
+  }
+
+  .how-it-works-club {
+    grid-template-columns: 146px 1.15fr 1fr;
+    gap: 16px;
+  }
+
+  .how-it-works-club-gift img {
+    width: 118px;
+  }
+}
+
+@media (max-width: 980px) {
+  .how-it-works-section {
+    padding: 52px 22px 64px;
+  }
+
+  .how-it-works-flow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 16px;
+  }
+
+  .how-it-works-arrow {
+    display: none;
+  }
+
+  .how-it-works-card {
+    min-height: 320px;
+  }
+
+  .how-it-works-club {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .how-it-works-club-copy p {
+    max-width: 620px;
+  }
+
+  .how-it-works-club-benefits {
+    width: 100%;
+    max-width: 620px;
+  }
+}
+
+@media (max-width: 620px) {
+  .how-it-works-section {
+    padding: 46px 14px 54px;
+  }
+
+  .how-it-works-badge {
+    min-height: 46px;
+    padding: 0 18px;
+    font-size: 13px;
+  }
+
+  .how-it-works-header h2 {
+    margin-top: 16px;
+    font-size: clamp(38px, 12vw, 56px);
+    letter-spacing: -2.4px;
+  }
+
+  .how-it-works-header p {
+    font-size: 16px;
+  }
+
+  .how-it-works-flow {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 22px;
+  }
+
+  .how-it-works-card {
+    min-height: 0;
+    padding: 22px 16px 16px;
+    border-radius: 22px;
+  }
+
+  .how-it-works-number {
+    width: 62px;
+    height: 62px;
+    margin-bottom: 12px;
+    font-size: 24px;
+  }
+
+  .how-it-works-card h3 {
+    font-size: 22px;
+  }
+
+  .how-it-works-card p {
+    font-size: 15px;
+  }
+
+  .how-it-works-illustration {
+    width: min(100%, 190px);
+    margin-top: 14px;
+  }
+
+  .how-it-works-club {
+    margin-top: 14px;
+    padding: 18px 16px 20px;
+    border-radius: 22px;
+    gap: 14px;
+  }
+
+  .how-it-works-club-gift img {
+    width: 104px;
+  }
+
+  .how-it-works-club-copy h3 {
+    font-size: clamp(30px, 8vw, 38px);
+    letter-spacing: -1.2px;
+  }
+
+  .how-it-works-club-copy p {
+    font-size: 16px;
+  }
+
+  .how-it-works-club-benefits {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    max-width: 260px;
+  }
+
+  .how-it-works-club-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    text-align: left;
+  }
+
+  .how-it-works-club-item img {
+    width: 56px;
+    height: 56px;
+    margin: 0;
+  }
+
+  .how-it-works-club-item strong {
+    font-size: 17px;
   }
 }
