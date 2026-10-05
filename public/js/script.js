@@ -23,155 +23,203 @@ const mqMobile = window.matchMedia("(max-width: 768px)");
 const isPainSliderMode = () => mqTablet.matches;
 
 function updatePainDots() {
-  if (!painDotsContainer) return;
 
-  const dots = painDotsContainer.querySelectorAll(".pain-dot");
+  if (!painDotsContainer) return;
 
-  dots.forEach((dot, index) => {
-    dot.classList.toggle("active", index === painIndex);
-  });
+  const dots = painDotsContainer.querySelectorAll(".pain-dot");
+
+  dots.forEach((dot, index) => {
+
+    dot.classList.toggle("active", index === painIndex);
+
+  });
+
 }
 
 function updatePainSlider() {
-  if (!painTrack) return;
 
-  if (!isPainSliderMode()) {
-    painTrack.style.transform = "translateX(0)";
+  if (!painTrack) return;
 
-    return;
-  }
+  if (!isPainSliderMode()) {
 
-  painTrack.style.transform = `translateX(-${painIndex * 100}%)`;
+    painTrack.style.transform = "translateX(0)";
 
-  updatePainDots();
+    return;
+
+  }
+
+  painTrack.style.transform = `translateX(-${painIndex * 100}%)`;
+
+  updatePainDots();
+
 }
 
 function nextPainSlide() {
-  if (!isPainSliderMode() || painCards.length === 0) return;
 
-  painIndex = (painIndex + 1) % painCards.length;
+  if (!isPainSliderMode() || painCards.length === 0) return;
 
-  updatePainSlider();
+  painIndex = (painIndex + 1) % painCards.length;
+
+  updatePainSlider();
+
 }
 
 function prevPainSlide() {
-  if (!isPainSliderMode() || painCards.length === 0) return;
 
-  painIndex = (painIndex - 1 + painCards.length) % painCards.length;
+  if (!isPainSliderMode() || painCards.length === 0) return;
 
-  updatePainSlider();
+  painIndex = (painIndex - 1 + painCards.length) % painCards.length;
+
+  updatePainSlider();
+
 }
 
 function stopPainAutoplay() {
-  if (painInterval !== null) {
-    clearInterval(painInterval);
 
-    painInterval = null;
-  }
+  if (painInterval !== null) {
+
+    clearInterval(painInterval);
+
+    painInterval = null;
+
+  }
+
 }
 
 function startPainAutoplay() {
-  stopPainAutoplay();
 
-  if (isPainSliderMode() && painCards.length > 1) {
-    painInterval = setInterval(nextPainSlide, 4000);
-  }
+  stopPainAutoplay();
+
+  if (isPainSliderMode() && painCards.length > 1) {
+
+    painInterval = setInterval(nextPainSlide, 4000);
+
+  }
+
 }
 
 if (painSlider && painTrack && painDotsContainer && painPrev && painNext) {
-  painCards.forEach((card, index) => {
-    const dot = document.createElement("button");
 
-    dot.className = "pain-dot";
+  painCards.forEach((card, index) => {
 
-    dot.type = "button";
+    const dot = document.createElement("button");
 
-    dot.setAttribute("aria-label", `Mostrar tarjeta ${index + 1}`);
+    dot.className = "pain-dot";
 
-    if (index === 0) {
-      dot.classList.add("active");
-    }
+    dot.type = "button";
 
-    dot.addEventListener("click", () => {
-      painIndex = index;
+    dot.setAttribute("aria-label", `Mostrar tarjeta ${index + 1}`);
 
-      updatePainSlider();
+    if (index === 0) {
 
-      startPainAutoplay();
-    });
+      dot.classList.add("active");
 
-    painDotsContainer.appendChild(dot);
-  });
+    }
 
-  painNext.addEventListener("click", () => {
-    nextPainSlide();
+    dot.addEventListener("click", () => {
 
-    startPainAutoplay();
-  });
+      painIndex = index;
 
-  painPrev.addEventListener("click", () => {
-    prevPainSlide();
+      updatePainSlider();
 
-    startPainAutoplay();
-  });
+      startPainAutoplay();
 
-  painSlider.addEventListener("mouseenter", stopPainAutoplay);
+    });
 
-  painSlider.addEventListener("mouseleave", startPainAutoplay);
+    painDotsContainer.appendChild(dot);
 
-  painSlider.addEventListener(
-    "touchstart",
+  });
 
-    (event) => {
-      touchStartX = event.changedTouches[0].clientX;
+  painNext.addEventListener("click", () => {
 
-      stopPainAutoplay();
-    },
+    nextPainSlide();
 
-    { passive: true },
-  );
+    startPainAutoplay();
 
-  painSlider.addEventListener(
-    "touchend",
+  });
 
-    (event) => {
-      const touchEndX = event.changedTouches[0].clientX;
+  painPrev.addEventListener("click", () => {
 
-      const distance = touchStartX - touchEndX;
+    prevPainSlide();
 
-      if (Math.abs(distance) > 50) {
-        distance > 0 ? nextPainSlide() : prevPainSlide();
-      }
+    startPainAutoplay();
 
-      startPainAutoplay();
-    },
+  });
 
-    { passive: true },
-  );
+  painSlider.addEventListener("mouseenter", stopPainAutoplay);
 
-  let painResizeFrame = 0;
+  painSlider.addEventListener("mouseleave", startPainAutoplay);
 
-  window.addEventListener(
-    "resize",
+  painSlider.addEventListener(
 
-    () => {
-      cancelAnimationFrame(painResizeFrame);
+    "touchstart",
 
-      painResizeFrame = requestAnimationFrame(() => {
-        painIndex = 0;
+    (event) => {
 
-        updatePainSlider();
+      touchStartX = event.changedTouches[0].clientX;
 
-        startPainAutoplay();
-      });
-    },
+      stopPainAutoplay();
 
-    { passive: true },
-  );
+    },
 
-  updatePainSlider();
+    { passive: true },
 
-  startPainAutoplay();
+  );
+
+  painSlider.addEventListener(
+
+    "touchend",
+
+    (event) => {
+
+      const touchEndX = event.changedTouches[0].clientX;
+
+      const distance = touchStartX - touchEndX;
+
+      if (Math.abs(distance) > 50) {
+
+        distance > 0 ? nextPainSlide() : prevPainSlide();
+
+      }
+
+      startPainAutoplay();
+
+    },
+
+    { passive: true },
+
+  );
+
+  let painResizeFrame = 0;
+
+  window.addEventListener(
+
+    "resize",
+
+    () => {
+
+      cancelAnimationFrame(painResizeFrame);
+
+      painResizeFrame = requestAnimationFrame(() => {
+
+        painIndex = 0;
+
+        updatePainSlider();
+
+        startPainAutoplay();
+
+      });
+
+    },
+
+    { passive: true },
+
+  );
+
+  updatePainSlider();
+
+  startPainAutoplay();
+
 }
 
 const ingredientsSlider = document.getElementById("ingredientsSlider");
@@ -193,204 +241,273 @@ let ingredientsInterval = null;
 let ingredientsTouchStartX = 0;
 
 function getIngredientsVisibleCards() {
-  if (mqMobile.matches) return 1;
 
-  if (mqTablet.matches) return 2;
+  if (mqMobile.matches) return 1;
 
-  return 5;
+  if (mqTablet.matches) return 2;
+
+  return 5;
+
 }
 
 function getIngredientsMaxIndex() {
-  return Math.max(0, ingredientCards.length - getIngredientsVisibleCards());
+
+  return Math.max(0, ingredientCards.length - getIngredientsVisibleCards());
+
 }
 
 function getIngredientOffset(index) {
-  if (mqMobile.matches) {
-    return `calc(-${index * 100}% - ${index * 0}px)`;
-  }
 
-  if (mqTablet.matches) {
-    return `calc(-${index * 50}% - ${index * 8}px)`;
-  }
+  if (mqMobile.matches) {
 
-  return `calc(-${index * 20}% - ${index * 3.6}px)`;
+    return `calc(-${index * 100}% - ${index * 0}px)`;
+
+  }
+
+  if (mqTablet.matches) {
+
+    return `calc(-${index * 50}% - ${index * 8}px)`;
+
+  }
+
+  return `calc(-${index * 20}% - ${index * 3.6}px)`;
+
 }
 
 function updateIngredientsDots() {
-  if (!ingredientsDotsContainer) return;
 
-  const dots = ingredientsDotsContainer.querySelectorAll(".ingredients-dot");
+  if (!ingredientsDotsContainer) return;
 
-  dots.forEach((dot, index) => {
-    dot.classList.toggle("active", index === ingredientsIndex);
-  });
+  const dots = ingredientsDotsContainer.querySelectorAll(".ingredients-dot");
+
+  dots.forEach((dot, index) => {
+
+    dot.classList.toggle("active", index === ingredientsIndex);
+
+  });
+
 }
 
 function createIngredientsDots() {
-  if (!ingredientsDotsContainer) return;
 
-  ingredientsDotsContainer.innerHTML = "";
+  if (!ingredientsDotsContainer) return;
 
-  const maxIndex = getIngredientsMaxIndex();
+  ingredientsDotsContainer.innerHTML = "";
 
-  for (let index = 0; index <= maxIndex; index++) {
-    const dot = document.createElement("button");
+  const maxIndex = getIngredientsMaxIndex();
 
-    dot.className = "ingredients-dot";
+  for (let index = 0; index <= maxIndex; index++) {
 
-    dot.type = "button";
+    const dot = document.createElement("button");
 
-    dot.setAttribute(
-      "aria-label",
+    dot.className = "ingredients-dot";
 
-      `Mostrar ingredientes desde la posición ${index + 1}`,
-    );
+    dot.type = "button";
 
-    if (index === ingredientsIndex) {
-      dot.classList.add("active");
-    }
+    dot.setAttribute(
 
-    dot.addEventListener("click", () => {
-      ingredientsIndex = index;
+      "aria-label",
 
-      updateIngredientsSlider();
+      `Mostrar ingredientes desde la posición ${index + 1}`,
 
-      startIngredientsAutoplay();
-    });
+    );
 
-    ingredientsDotsContainer.appendChild(dot);
-  }
+    if (index === ingredientsIndex) {
+
+      dot.classList.add("active");
+
+    }
+
+    dot.addEventListener("click", () => {
+
+      ingredientsIndex = index;
+
+      updateIngredientsSlider();
+
+      startIngredientsAutoplay();
+
+    });
+
+    ingredientsDotsContainer.appendChild(dot);
+
+  }
+
 }
 
 function updateIngredientsSlider() {
-  if (!ingredientsTrack || ingredientCards.length === 0) return;
 
-  const maxIndex = getIngredientsMaxIndex();
+  if (!ingredientsTrack || ingredientCards.length === 0) return;
 
-  if (ingredientsIndex > maxIndex) {
-    ingredientsIndex = maxIndex;
-  }
+  const maxIndex = getIngredientsMaxIndex();
 
-  const offset = getIngredientOffset(ingredientsIndex);
+  if (ingredientsIndex > maxIndex) {
 
-  ingredientsTrack.style.transform = `translateX(${offset})`;
+    ingredientsIndex = maxIndex;
 
-  updateIngredientsDots();
+  }
+
+  const offset = getIngredientOffset(ingredientsIndex);
+
+  ingredientsTrack.style.transform = `translateX(${offset})`;
+
+  updateIngredientsDots();
+
 }
 
 function nextIngredientsSlide() {
-  const maxIndex = getIngredientsMaxIndex();
 
-  ingredientsIndex = ingredientsIndex >= maxIndex ? 0 : ingredientsIndex + 1;
+  const maxIndex = getIngredientsMaxIndex();
 
-  updateIngredientsSlider();
+  ingredientsIndex = ingredientsIndex >= maxIndex ? 0 : ingredientsIndex + 1;
+
+  updateIngredientsSlider();
+
 }
 
 function prevIngredientsSlide() {
-  const maxIndex = getIngredientsMaxIndex();
 
-  ingredientsIndex = ingredientsIndex <= 0 ? maxIndex : ingredientsIndex - 1;
+  const maxIndex = getIngredientsMaxIndex();
 
-  updateIngredientsSlider();
+  ingredientsIndex = ingredientsIndex <= 0 ? maxIndex : ingredientsIndex - 1;
+
+  updateIngredientsSlider();
+
 }
 
 function stopIngredientsAutoplay() {
-  if (ingredientsInterval !== null) {
-    clearInterval(ingredientsInterval);
 
-    ingredientsInterval = null;
-  }
+  if (ingredientsInterval !== null) {
+
+    clearInterval(ingredientsInterval);
+
+    ingredientsInterval = null;
+
+  }
+
 }
 
 function startIngredientsAutoplay() {
-  stopIngredientsAutoplay();
 
-  if (ingredientCards.length > getIngredientsVisibleCards()) {
-    ingredientsInterval = setInterval(nextIngredientsSlide, 4000);
-  }
+  stopIngredientsAutoplay();
+
+  if (ingredientCards.length > getIngredientsVisibleCards()) {
+
+    ingredientsInterval = setInterval(nextIngredientsSlide, 4000);
+
+  }
+
 }
 
 if (
-  ingredientsSlider &&
-  ingredientsTrack &&
-  ingredientsDotsContainer &&
-  ingredientsPrev &&
-  ingredientsNext &&
-  ingredientCards.length > 0
+
+  ingredientsSlider &&
+
+  ingredientsTrack &&
+
+  ingredientsDotsContainer &&
+
+  ingredientsPrev &&
+
+  ingredientsNext &&
+
+  ingredientCards.length > 0
+
 ) {
-  createIngredientsDots();
 
-  ingredientsNext.addEventListener("click", () => {
-    nextIngredientsSlide();
+  createIngredientsDots();
 
-    startIngredientsAutoplay();
-  });
+  ingredientsNext.addEventListener("click", () => {
 
-  ingredientsPrev.addEventListener("click", () => {
-    prevIngredientsSlide();
+    nextIngredientsSlide();
 
-    startIngredientsAutoplay();
-  });
+    startIngredientsAutoplay();
 
-  ingredientsSlider.addEventListener("mouseenter", stopIngredientsAutoplay);
+  });
 
-  ingredientsSlider.addEventListener("mouseleave", startIngredientsAutoplay);
+  ingredientsPrev.addEventListener("click", () => {
 
-  ingredientsSlider.addEventListener(
-    "touchstart",
+    prevIngredientsSlide();
 
-    (event) => {
-      ingredientsTouchStartX = event.changedTouches[0].clientX;
+    startIngredientsAutoplay();
 
-      stopIngredientsAutoplay();
-    },
+  });
 
-    { passive: true },
-  );
+  ingredientsSlider.addEventListener("mouseenter", stopIngredientsAutoplay);
 
-  ingredientsSlider.addEventListener(
-    "touchend",
+  ingredientsSlider.addEventListener("mouseleave", startIngredientsAutoplay);
 
-    (event) => {
-      const ingredientsTouchEndX = event.changedTouches[0].clientX;
+  ingredientsSlider.addEventListener(
 
-      const distance = ingredientsTouchStartX - ingredientsTouchEndX;
+    "touchstart",
 
-      if (Math.abs(distance) > 50) {
-        distance > 0 ? nextIngredientsSlide() : prevIngredientsSlide();
-      }
+    (event) => {
 
-      startIngredientsAutoplay();
-    },
+      ingredientsTouchStartX = event.changedTouches[0].clientX;
 
-    { passive: true },
-  );
+      stopIngredientsAutoplay();
 
-  let ingredientsResizeFrame = 0;
+    },
 
-  window.addEventListener(
-    "resize",
+    { passive: true },
 
-    () => {
-      cancelAnimationFrame(ingredientsResizeFrame);
+  );
 
-      ingredientsResizeFrame = requestAnimationFrame(() => {
-        ingredientsIndex = 0;
+  ingredientsSlider.addEventListener(
 
-        createIngredientsDots();
+    "touchend",
 
-        updateIngredientsSlider();
+    (event) => {
 
-        startIngredientsAutoplay();
-      });
-    },
+      const ingredientsTouchEndX = event.changedTouches[0].clientX;
 
-    { passive: true },
-  );
+      const distance = ingredientsTouchStartX - ingredientsTouchEndX;
 
-  updateIngredientsSlider();
+      if (Math.abs(distance) > 50) {
 
-  startIngredientsAutoplay();
+        distance > 0 ? nextIngredientsSlide() : prevIngredientsSlide();
+
+      }
+
+      startIngredientsAutoplay();
+
+    },
+
+    { passive: true },
+
+  );
+
+  let ingredientsResizeFrame = 0;
+
+  window.addEventListener(
+
+    "resize",
+
+    () => {
+
+      cancelAnimationFrame(ingredientsResizeFrame);
+
+      ingredientsResizeFrame = requestAnimationFrame(() => {
+
+        ingredientsIndex = 0;
+
+        createIngredientsDots();
+
+        updateIngredientsSlider();
+
+        startIngredientsAutoplay();
+
+      });
+
+    },
+
+    { passive: true },
+
+  );
+
+  updateIngredientsSlider();
+
+  startIngredientsAutoplay();
+
 }
 
 const testimonialsSlider = document.getElementById("testimonialsSlider");
@@ -414,290 +531,423 @@ let testimonialsInterval = null;
 let testimonialsTouchStartX = 0;
 
 function getTestimonialsVisibleCards() {
-  if (mqMobile.matches) {
-    return 1;
-  }
 
-  if (mqTablet.matches) {
-    return 2;
-  }
+  if (mqMobile.matches) {
 
-  return 4;
+    return 1;
+
+  }
+
+  if (mqTablet.matches) {
+
+    return 2;
+
+  }
+
+  return 4;
+
 }
 
 function getTestimonialsMaxIndex() {
-  return Math.max(0, testimonialCards.length - getTestimonialsVisibleCards());
+
+  return Math.max(0, testimonialCards.length - getTestimonialsVisibleCards());
+
 }
 
 function getTestimonialOffset(index) {
-  if (mqMobile.matches) {
-    return `calc(-${index * 100}% - ${index * 16}px)`;
-  }
 
-  if (mqTablet.matches) {
-    return `calc(-${index * 50}% - ${index * 12}px)`;
-  }
+  if (mqMobile.matches) {
 
-  return `calc(-${index * 25}% - ${index * 6}px)`;
+    return `calc(-${index * 100}% - ${index * 16}px)`;
+
+  }
+
+  if (mqTablet.matches) {
+
+    return `calc(-${index * 50}% - ${index * 12}px)`;
+
+  }
+
+  return `calc(-${index * 25}% - ${index * 6}px)`;
+
 }
 
 function createTestimonialsDots() {
-  if (!testimonialsDotsContainer) {
-    return;
-  }
 
-  testimonialsDotsContainer.innerHTML = "";
+  if (!testimonialsDotsContainer) {
 
-  const maxIndex = getTestimonialsMaxIndex();
+    return;
 
-  for (let index = 0; index <= maxIndex; index++) {
-    const dot = document.createElement("button");
+  }
 
-    dot.className = "testimonials-dot";
+  testimonialsDotsContainer.innerHTML = "";
 
-    dot.type = "button";
+  const maxIndex = getTestimonialsMaxIndex();
 
-    dot.setAttribute("aria-label", `Mostrar testimonio ${index + 1}`);
+  for (let index = 0; index <= maxIndex; index++) {
 
-    if (index === testimonialsIndex) {
-      dot.classList.add("active");
-    }
+    const dot = document.createElement("button");
 
-    dot.addEventListener("click", () => {
-      if (
-        testimonialVideo &&
-        !testimonialVideo.paused &&
-        !testimonialVideo.ended
-      ) {
-        return;
-      }
+    dot.className = "testimonials-dot";
 
-      testimonialsIndex = index;
+    dot.type = "button";
 
-      updateTestimonialsSlider();
+    dot.setAttribute("aria-label", `Mostrar testimonio ${index + 1}`);
 
-      startTestimonialsAutoplay();
-    });
+    if (index === testimonialsIndex) {
 
-    testimonialsDotsContainer.appendChild(dot);
-  }
+      dot.classList.add("active");
+
+    }
+
+    dot.addEventListener("click", () => {
+
+      if (
+
+        testimonialVideo &&
+
+        !testimonialVideo.paused &&
+
+        !testimonialVideo.ended
+
+      ) {
+
+        return;
+
+      }
+
+      testimonialsIndex = index;
+
+      updateTestimonialsSlider();
+
+      startTestimonialsAutoplay();
+
+    });
+
+    testimonialsDotsContainer.appendChild(dot);
+
+  }
+
 }
 
 function updateTestimonialsDots() {
-  if (!testimonialsDotsContainer) {
-    return;
-  }
 
-  const dots = testimonialsDotsContainer.querySelectorAll(".testimonials-dot");
+  if (!testimonialsDotsContainer) {
 
-  dots.forEach((dot, index) => {
-    dot.classList.toggle("active", index === testimonialsIndex);
-  });
+    return;
+
+  }
+
+  const dots = testimonialsDotsContainer.querySelectorAll(".testimonials-dot");
+
+  dots.forEach((dot, index) => {
+
+    dot.classList.toggle("active", index === testimonialsIndex);
+
+  });
+
 }
 
 function updateTestimonialsSlider() {
-  if (!testimonialsTrack || testimonialCards.length === 0) {
-    return;
-  }
 
-  const maxIndex = getTestimonialsMaxIndex();
+  if (!testimonialsTrack || testimonialCards.length === 0) {
 
-  if (testimonialsIndex > maxIndex) {
-    testimonialsIndex = maxIndex;
-  }
+    return;
 
-  const offset = getTestimonialOffset(testimonialsIndex);
+  }
 
-  testimonialsTrack.style.transform = `translateX(${offset})`;
+  const maxIndex = getTestimonialsMaxIndex();
 
-  updateTestimonialsDots();
+  if (testimonialsIndex > maxIndex) {
+
+    testimonialsIndex = maxIndex;
+
+  }
+
+  const offset = getTestimonialOffset(testimonialsIndex);
+
+  testimonialsTrack.style.transform = `translateX(${offset})`;
+
+  updateTestimonialsDots();
+
 }
 
 function nextTestimonialsSlide() {
-  if (testimonialVideo && !testimonialVideo.paused && !testimonialVideo.ended) {
-    return;
-  }
 
-  const maxIndex = getTestimonialsMaxIndex();
+  if (testimonialVideo && !testimonialVideo.paused && !testimonialVideo.ended) {
 
-  testimonialsIndex = testimonialsIndex >= maxIndex ? 0 : testimonialsIndex + 1;
+    return;
 
-  updateTestimonialsSlider();
+  }
+
+  const maxIndex = getTestimonialsMaxIndex();
+
+  testimonialsIndex = testimonialsIndex >= maxIndex ? 0 : testimonialsIndex + 1;
+
+  updateTestimonialsSlider();
+
 }
 
 function prevTestimonialsSlide() {
-  if (testimonialVideo && !testimonialVideo.paused && !testimonialVideo.ended) {
-    return;
-  }
 
-  const maxIndex = getTestimonialsMaxIndex();
+  if (testimonialVideo && !testimonialVideo.paused && !testimonialVideo.ended) {
 
-  testimonialsIndex = testimonialsIndex <= 0 ? maxIndex : testimonialsIndex - 1;
+    return;
 
-  updateTestimonialsSlider();
+  }
+
+  const maxIndex = getTestimonialsMaxIndex();
+
+  testimonialsIndex = testimonialsIndex <= 0 ? maxIndex : testimonialsIndex - 1;
+
+  updateTestimonialsSlider();
+
 }
 
 function stopTestimonialsAutoplay() {
-  if (testimonialsInterval !== null) {
-    clearInterval(testimonialsInterval);
 
-    testimonialsInterval = null;
-  }
+  if (testimonialsInterval !== null) {
+
+    clearInterval(testimonialsInterval);
+
+    testimonialsInterval = null;
+
+  }
+
 }
 
 function startTestimonialsAutoplay() {
-  stopTestimonialsAutoplay();
 
-  if (testimonialVideo && !testimonialVideo.paused && !testimonialVideo.ended) {
-    return;
-  }
+  stopTestimonialsAutoplay();
 
-  if (testimonialCards.length > getTestimonialsVisibleCards()) {
-    testimonialsInterval = setInterval(nextTestimonialsSlide, 4500);
-  }
+  if (testimonialVideo && !testimonialVideo.paused && !testimonialVideo.ended) {
+
+    return;
+
+  }
+
+  if (testimonialCards.length > getTestimonialsVisibleCards()) {
+
+    testimonialsInterval = setInterval(nextTestimonialsSlide, 4500);
+
+  }
+
 }
 
 if (
-  testimonialsSlider &&
-  testimonialsTrack &&
-  testimonialsPrev &&
-  testimonialsNext &&
-  testimonialsDotsContainer &&
-  testimonialCards.length > 0
+
+  testimonialsSlider &&
+
+  testimonialsTrack &&
+
+  testimonialsPrev &&
+
+  testimonialsNext &&
+
+  testimonialsDotsContainer &&
+
+  testimonialCards.length > 0
+
 ) {
-  createTestimonialsDots();
 
-  testimonialsNext.addEventListener("click", () => {
-    if (
-      testimonialVideo &&
-      !testimonialVideo.paused &&
-      !testimonialVideo.ended
-    ) {
-      return;
-    }
+  createTestimonialsDots();
 
-    nextTestimonialsSlide();
+  testimonialsNext.addEventListener("click", () => {
 
-    startTestimonialsAutoplay();
-  });
+    if (
 
-  testimonialsPrev.addEventListener("click", () => {
-    if (
-      testimonialVideo &&
-      !testimonialVideo.paused &&
-      !testimonialVideo.ended
-    ) {
-      return;
-    }
+      testimonialVideo &&
 
-    prevTestimonialsSlide();
+      !testimonialVideo.paused &&
 
-    startTestimonialsAutoplay();
-  });
+      !testimonialVideo.ended
 
-  testimonialsSlider.addEventListener("mouseenter", () => {
-    stopTestimonialsAutoplay();
-  });
+    ) {
 
-  testimonialsSlider.addEventListener("mouseleave", () => {
-    if (
-      testimonialVideo &&
-      !testimonialVideo.paused &&
-      !testimonialVideo.ended
-    ) {
-      return;
-    }
+      return;
 
-    startTestimonialsAutoplay();
-  });
+    }
 
-  testimonialsSlider.addEventListener(
-    "touchstart",
+    nextTestimonialsSlide();
 
-    (event) => {
-      testimonialsTouchStartX = event.changedTouches[0].clientX;
+    startTestimonialsAutoplay();
 
-      stopTestimonialsAutoplay();
-    },
+  });
 
-    {
-      passive: true,
-    },
-  );
+  testimonialsPrev.addEventListener("click", () => {
 
-  testimonialsSlider.addEventListener(
-    "touchend",
+    if (
 
-    (event) => {
-      if (
-        testimonialVideo &&
-        !testimonialVideo.paused &&
-        !testimonialVideo.ended
-      ) {
-        return;
-      }
+      testimonialVideo &&
 
-      const touchEndX = event.changedTouches[0].clientX;
+      !testimonialVideo.paused &&
 
-      const distance = testimonialsTouchStartX - touchEndX;
+      !testimonialVideo.ended
 
-      if (Math.abs(distance) > 50) {
-        distance > 0 ? nextTestimonialsSlide() : prevTestimonialsSlide();
-      }
+    ) {
 
-      startTestimonialsAutoplay();
-    },
+      return;
 
-    {
-      passive: true,
-    },
-  );
+    }
 
-  let testimonialsResizeFrame = 0;
+    prevTestimonialsSlide();
 
-  window.addEventListener(
-    "resize",
+    startTestimonialsAutoplay();
 
-    () => {
-      cancelAnimationFrame(testimonialsResizeFrame);
+  });
 
-      testimonialsResizeFrame = requestAnimationFrame(() => {
-        testimonialsIndex = 0;
+  testimonialsSlider.addEventListener("mouseenter", () => {
 
-        createTestimonialsDots();
+    stopTestimonialsAutoplay();
 
-        updateTestimonialsSlider();
+  });
 
-        if (
-          !testimonialVideo ||
-          testimonialVideo.paused ||
-          testimonialVideo.ended
-        ) {
-          startTestimonialsAutoplay();
-        }
-      });
-    },
+  testimonialsSlider.addEventListener("mouseleave", () => {
 
-    { passive: true },
-  );
+    if (
 
-  updateTestimonialsSlider();
+      testimonialVideo &&
 
-  startTestimonialsAutoplay();
+      !testimonialVideo.paused &&
+
+      !testimonialVideo.ended
+
+    ) {
+
+      return;
+
+    }
+
+    startTestimonialsAutoplay();
+
+  });
+
+  testimonialsSlider.addEventListener(
+
+    "touchstart",
+
+    (event) => {
+
+      testimonialsTouchStartX = event.changedTouches[0].clientX;
+
+      stopTestimonialsAutoplay();
+
+    },
+
+    {
+
+      passive: true,
+
+    },
+
+  );
+
+  testimonialsSlider.addEventListener(
+
+    "touchend",
+
+    (event) => {
+
+      if (
+
+        testimonialVideo &&
+
+        !testimonialVideo.paused &&
+
+        !testimonialVideo.ended
+
+      ) {
+
+        return;
+
+      }
+
+      const touchEndX = event.changedTouches[0].clientX;
+
+      const distance = testimonialsTouchStartX - touchEndX;
+
+      if (Math.abs(distance) > 50) {
+
+        distance > 0 ? nextTestimonialsSlide() : prevTestimonialsSlide();
+
+      }
+
+      startTestimonialsAutoplay();
+
+    },
+
+    {
+
+      passive: true,
+
+    },
+
+  );
+
+  let testimonialsResizeFrame = 0;
+
+  window.addEventListener(
+
+    "resize",
+
+    () => {
+
+      cancelAnimationFrame(testimonialsResizeFrame);
+
+      testimonialsResizeFrame = requestAnimationFrame(() => {
+
+        testimonialsIndex = 0;
+
+        createTestimonialsDots();
+
+        updateTestimonialsSlider();
+
+        if (
+
+          !testimonialVideo ||
+
+          testimonialVideo.paused ||
+
+          testimonialVideo.ended
+
+        ) {
+
+          startTestimonialsAutoplay();
+
+        }
+
+      });
+
+    },
+
+    { passive: true },
+
+  );
+
+  updateTestimonialsSlider();
+
+  startTestimonialsAutoplay();
+
 }
 
 if (testimonialVideo) {
-  testimonialVideo.addEventListener("play", () => {
-    stopTestimonialsAutoplay();
-  });
 
-  testimonialVideo.addEventListener("ended", () => {
-    testimonialVideo.currentTime = 0;
+  testimonialVideo.addEventListener("play", () => {
 
-    testimonialVideo.pause();
+    stopTestimonialsAutoplay();
 
-    startTestimonialsAutoplay();
-  });
+  });
+
+  testimonialVideo.addEventListener("ended", () => {
+
+    testimonialVideo.currentTime = 0;
+
+    testimonialVideo.pause();
+
+    startTestimonialsAutoplay();
+
+  });
+
 }
 
 const offerButtons = document.querySelectorAll(".select-offer");
@@ -727,7 +977,9 @@ const checkoutSubmit = document.getElementById("checkoutSubmit");
 const checkoutWarning = document.getElementById("checkoutWarning");
 
 const offersData = {
+
   iniciacion: {
+
     name: "INICIACIÓN",
 
     price: 79900,
@@ -739,6 +991,7 @@ const offersData = {
     popular: false,
 
     items: [
+
       "1 Tarro de Fibra Fix (600 g)",
 
       "Acceso plataforma acompañamiento Método Fibra Fix 21 Días (Acompañamiento, retos, menús, despensa inteligente y más)",
@@ -752,10 +1005,13 @@ const offersData = {
       "Envío gratis",
 
       "Pago contra entrega",
+
     ],
+
   },
 
   avanzado: {
+
     name: "AVANZADO",
 
     price: 114900,
@@ -767,6 +1023,7 @@ const offersData = {
     popular: true,
 
     items: [
+
       "2 Tarros de Fibra Fix (600 g c/u)",
 
       "2 parches Kinoki relajantes (Obsequio)",
@@ -782,10 +1039,13 @@ const offersData = {
       "Envío gratis",
 
       "Pago contra entrega",
+
     ],
+
   },
 
   completo: {
+
     name: "TRATAMIENTO COMPLETO",
 
     price: 143900,
@@ -797,6 +1057,7 @@ const offersData = {
     popular: false,
 
     items: [
+
       "3 Tarros de Fibra Fix (600 g c/u)",
 
       "2 parches Kinoki relajantes (Obsequio)",
@@ -812,332 +1073,463 @@ const offersData = {
       "Envío gratis",
 
       "Pago contra entrega",
+
     ],
+
   },
+
 };
 
 let currentOffer = null;
 
 function selectCheckoutOffer(offerKey) {
-  const offer = offersData[offerKey];
 
-  if (!offer) {
-    return;
-  }
+  const offer = offersData[offerKey];
 
-  currentOffer = offerKey;
+  if (!offer) {
 
-  selectedOfferInput.value = offer.name;
+    return;
 
-  selectedPriceInput.value = offer.price;
+  }
 
-  checkoutNoOffer.classList.add("is-hidden");
+  currentOffer = offerKey;
 
-  checkoutOfferContent.hidden = false;
+  selectedOfferInput.value = offer.name;
 
-  checkoutOfferImage.src = offer.image;
+  selectedPriceInput.value = offer.price;
 
-  checkoutOfferImage.alt = `Oferta ${offer.name} Fibra Fix`;
+  checkoutNoOffer.classList.add("is-hidden");
 
-  checkoutOfferName.textContent = offer.name;
+  checkoutOfferContent.hidden = false;
 
-  checkoutPopular.hidden = !offer.popular;
+  checkoutOfferImage.src = offer.image;
 
-  checkoutOfferList.innerHTML = "";
+  checkoutOfferImage.alt = `Oferta ${offer.name} Fibra Fix`;
 
-  offer.items.forEach((item) => {
-    const li = document.createElement("li");
+  checkoutOfferName.textContent = offer.name;
 
-    li.textContent = item;
+  checkoutPopular.hidden = !offer.popular;
 
-    checkoutOfferList.appendChild(li);
-  });
+  checkoutOfferList.innerHTML = "";
 
-  checkoutTotal.textContent = offer.formattedPrice;
+  offer.items.forEach((item) => {
 
-  checkoutWarning.classList.remove("show");
+    const li = document.createElement("li");
 
-  validateCheckout();
+    li.textContent = item;
+
+    checkoutOfferList.appendChild(li);
+
+  });
+
+  checkoutTotal.textContent = offer.formattedPrice;
+
+  checkoutWarning.classList.remove("show");
+
+  validateCheckout();
+
 }
 
 offerButtons.forEach((button) => {
-  button.addEventListener("click", (event) => {
-    event.preventDefault();
 
-    const offerKey = button.dataset.offer;
+  button.addEventListener("click", (event) => {
 
-    selectCheckoutOffer(offerKey);
+    event.preventDefault();
 
-    const checkoutSection = document.getElementById("pedido");
+    const offerKey = button.dataset.offer;
 
-    if (checkoutSection) {
-      checkoutSection.scrollIntoView({
-        behavior: "smooth",
+    selectCheckoutOffer(offerKey);
 
-        block: "start",
-      });
-    }
-  });
+    const checkoutSection = document.getElementById("pedido");
+
+    if (checkoutSection) {
+
+      checkoutSection.scrollIntoView({
+
+        behavior: "smooth",
+
+        block: "start",
+
+      });
+
+    }
+
+  });
+
 });
 
 function isValidPhone(value) {
-  const cleanPhone = value.replace(/\D/g, "");
 
-  return cleanPhone.length >= 7 && cleanPhone.length <= 15;
+  const cleanPhone = value.replace(/\D/g, "");
+
+  return cleanPhone.length >= 7 && cleanPhone.length <= 15;
+
 }
 
 function validateCheckout() {
-  if (!checkoutForm || !checkoutSubmit) {
-    return false;
-  }
 
-  const name = document.getElementById("checkoutName").value.trim();
+  if (!checkoutForm || !checkoutSubmit) {
 
-  const whatsapp = document.getElementById("checkoutWhatsapp").value.trim();
+    return false;
 
-  const department = document.getElementById("checkoutDepartment").value.trim();
+  }
 
-  const city = document.getElementById("checkoutCity").value.trim();
+  const name = document.getElementById("checkoutName").value.trim();
 
-  const address = document.getElementById("checkoutAddress").value.trim();
+  const whatsapp = document.getElementById("checkoutWhatsapp").value.trim();
 
-  const isValid =
-    currentOffer !== null &&
-    name.length >= 3 &&
-    isValidPhone(whatsapp) &&
-    department !== "" &&
-    city.length >= 2 &&
-    address.length >= 8;
+  const department = document.getElementById("checkoutDepartment").value.trim();
 
-  checkoutSubmit.disabled = !isValid;
+  const city = document.getElementById("checkoutCity").value.trim();
 
-  return isValid;
+  const address = document.getElementById("checkoutAddress").value.trim();
+
+  const isValid =
+
+    currentOffer !== null &&
+
+    name.length >= 3 &&
+
+    isValidPhone(whatsapp) &&
+
+    department !== "" &&
+
+    city.length >= 2 &&
+
+    address.length >= 8;
+
+  checkoutSubmit.disabled = !isValid;
+
+  return isValid;
+
 }
 
 if (checkoutForm) {
-  const checkoutInputs = checkoutForm.querySelectorAll(
-    "input[required], select[required]",
-  );
 
-  checkoutInputs.forEach((field) => {
-    field.addEventListener("input", validateCheckout);
+  const checkoutInputs = checkoutForm.querySelectorAll(
 
-    field.addEventListener("change", validateCheckout);
+    "input[required], select[required]",
 
-    field.addEventListener("blur", () => {
-      validateSingleField(field);
-    });
-  });
+  );
+
+  checkoutInputs.forEach((field) => {
+
+    field.addEventListener("input", validateCheckout);
+
+    field.addEventListener("change", validateCheckout);
+
+    field.addEventListener("blur", () => {
+
+      validateSingleField(field);
+
+    });
+
+  });
+
 }
 
 function validateSingleField(field) {
-  const fieldContainer = field.closest(".checkout-field");
 
-  if (!fieldContainer) {
-    return;
-  }
+  const fieldContainer = field.closest(".checkout-field");
 
-  let valid = field.checkValidity();
+  if (!fieldContainer) {
 
-  if (field.id === "checkoutWhatsapp") {
-    valid = isValidPhone(field.value);
-  }
+    return;
 
-  if (valid) {
-    fieldContainer.classList.remove("invalid");
-  } else {
-    fieldContainer.classList.add("invalid");
-  }
+  }
+
+  let valid = field.checkValidity();
+
+  if (field.id === "checkoutWhatsapp") {
+
+    valid = isValidPhone(field.value);
+
+  }
+
+  if (valid) {
+
+    fieldContainer.classList.remove("invalid");
+
+  } else {
+
+    fieldContainer.classList.add("invalid");
+
+  }
+
 }
 
 const whatsappInput = document.getElementById("checkoutWhatsapp");
 
 if (whatsappInput) {
-  whatsappInput.addEventListener("input", () => {
-    whatsappInput.value = whatsappInput.value.replace(/[^\d+\s]/g, "");
-  });
+
+  whatsappInput.addEventListener("input", () => {
+
+    whatsappInput.value = whatsappInput.value.replace(/[^\d+\s]/g, "");
+
+  });
+
 }
 
 if (checkoutForm) {
-  checkoutForm.addEventListener("submit", async (event) => {
-    event.preventDefault();
 
-    if (!currentOffer) {
-      checkoutWarning.classList.add("show");
+  checkoutForm.addEventListener("submit", async (event) => {
 
-      return;
-    }
+    event.preventDefault();
 
-    if (!validateCheckout()) {
-      const fields = checkoutForm.querySelectorAll(
-        "input[required], select[required]",
-      );
+    if (!currentOffer) {
 
-      fields.forEach((field) => {
-        validateSingleField(field);
-      });
+      checkoutWarning.classList.add("show");
 
-      return;
-    }
+      return;
 
-    const orderData = {
-      oferta: currentOffer,
+    }
 
-      nombre: document.getElementById("checkoutName").value.trim(),
+    if (!validateCheckout()) {
 
-      whatsapp: document.getElementById("checkoutWhatsapp").value.trim(),
+      const fields = checkoutForm.querySelectorAll(
 
-      departamento: document.getElementById("checkoutDepartment").value,
+        "input[required], select[required]",
 
-      ciudad: document.getElementById("checkoutCity").value.trim(),
+      );
 
-      direccion: document.getElementById("checkoutAddress").value.trim(),
+      fields.forEach((field) => {
 
-      total: offersData[currentOffer].price,
-    };
+        validateSingleField(field);
 
-    try {
-      const response = await fetch("/api/orders", {
-        method: "POST",
+      });
 
-        headers: {
-          "Content-Type": "application/json",
-        },
+      return;
 
-        body: JSON.stringify(orderData),
-      });
+    }
 
-      const result = await response.json();
+    const orderData = {
 
-      if (!response.ok) {
-        throw new Error(result.message || "No se pudo registrar el pedido");
-      }
+      oferta: currentOffer,
 
-      console.log("Pedido enviado al backend:", result);
+      nombre: document.getElementById("checkoutName").value.trim(),
 
-      showOrderConfirmation(orderData);
-    } catch (error) {
-      console.error("Error enviando el pedido:", error);
+      whatsapp: document.getElementById("checkoutWhatsapp").value.trim(),
 
-      alert("No pudimos registrar tu pedido. Por favor intenta nuevamente.");
-    }
-  });
+      departamento: document.getElementById("checkoutDepartment").value,
+
+      ciudad: document.getElementById("checkoutCity").value.trim(),
+
+      direccion: document.getElementById("checkoutAddress").value.trim(),
+
+      total: offersData[currentOffer].price,
+
+    };
+
+   try {
+
+  const response = await fetch("/api/orders", {
+
+    method: "POST",
+
+    headers: {
+
+      "Content-Type": "application/json",
+
+    },
+
+    body: JSON.stringify(orderData),
+
+  });
+
+
+
+  const result = await response.json();
+
+
+
+  if (!response.ok) {
+
+    throw new Error(result.message || "No se pudo registrar el pedido");
+
+  }
+
+
+
+  console.log("Pedido enviado al backend:", result);
+
+
+
+  showOrderConfirmation(orderData);
+
+} catch (error) {
+
+  console.error("Error enviando el pedido:", error);
+
+
+
+  alert(
+
+    "No pudimos registrar tu pedido. Por favor intenta nuevamente."
+
+  );
+
+}
+
+  });
+
 }
 
 function showOrderConfirmation(orderData) {
-  const orderConfirmation = document.getElementById("orderConfirmation");
 
-  const confirmationOfferImage = document.getElementById(
-    "confirmationOfferImage",
-  );
+  const orderConfirmation = document.getElementById("orderConfirmation");
 
-  const confirmationOfferName = document.getElementById(
-    "confirmationOfferName",
-  );
+  const confirmationOfferImage = document.getElementById(
 
-  const confirmationOfferList = document.getElementById(
-    "confirmationOfferList",
-  );
+    "confirmationOfferImage",
 
-  const confirmationPopular = document.getElementById("confirmationPopular");
+  );
 
-  const confirmationName = document.getElementById("confirmationName");
+  const confirmationOfferName = document.getElementById(
 
-  const confirmationWhatsapp = document.getElementById("confirmationWhatsapp");
+    "confirmationOfferName",
 
-  const confirmationLocation = document.getElementById("confirmationLocation");
+  );
 
-  const confirmationAddress = document.getElementById("confirmationAddress");
+  const confirmationOfferList = document.getElementById(
 
-  const confirmationTotal = document.getElementById("confirmationTotal");
+    "confirmationOfferList",
 
-  if (!orderConfirmation) {
-    console.error("No existe la sección #orderConfirmation");
+  );
 
-    return;
-  }
+  const confirmationPopular = document.getElementById("confirmationPopular");
 
-  if (!currentOffer) {
-    console.error("No hay oferta seleccionada");
+  const confirmationName = document.getElementById("confirmationName");
 
-    return;
-  }
+  const confirmationWhatsapp = document.getElementById("confirmationWhatsapp");
 
-  const offer = offersData[currentOffer];
+  const confirmationLocation = document.getElementById("confirmationLocation");
 
-  if (!offer) {
-    console.error("La oferta seleccionada no existe");
+  const confirmationAddress = document.getElementById("confirmationAddress");
 
-    return;
-  }
+  const confirmationTotal = document.getElementById("confirmationTotal");
 
-  if (confirmationOfferImage) {
-    confirmationOfferImage.src = offer.image;
+  if (!orderConfirmation) {
 
-    confirmationOfferImage.alt = `Oferta ${offer.name} Fibra Fix`;
-  }
+    console.error("No existe la sección #orderConfirmation");
 
-  if (confirmationOfferName) {
-    confirmationOfferName.textContent = offer.name;
-  }
+    return;
 
-  if (confirmationPopular) {
-    confirmationPopular.hidden = !offer.popular;
-  }
+  }
 
-  if (confirmationOfferList) {
-    confirmationOfferList.innerHTML = "";
+  if (!currentOffer) {
 
-    offer.items.forEach((item) => {
-      if (item === "Envío gratis" || item === "Pago contra entrega") {
-        return;
-      }
+    console.error("No hay oferta seleccionada");
 
-      const li = document.createElement("li");
+    return;
 
-      li.textContent = item;
+  }
 
-      confirmationOfferList.appendChild(li);
-    });
-  }
+  const offer = offersData[currentOffer];
 
-  if (confirmationName) {
-    confirmationName.textContent = orderData.nombre;
-  }
+  if (!offer) {
 
-  if (confirmationWhatsapp) {
-    confirmationWhatsapp.textContent = orderData.whatsapp;
-  }
+    console.error("La oferta seleccionada no existe");
 
-  if (confirmationLocation) {
-    confirmationLocation.textContent = `${orderData.ciudad}, ${orderData.departamento}`;
-  }
+    return;
 
-  if (confirmationAddress) {
-    confirmationAddress.textContent = orderData.direccion;
-  }
+  }
 
-  if (confirmationTotal) {
-    confirmationTotal.textContent = offer.formattedPrice;
-  }
+  if (confirmationOfferImage) {
 
-  const checkoutSection = document.getElementById("pedido");
+    confirmationOfferImage.src = offer.image;
 
-  if (checkoutSection) {
-    checkoutSection.style.display = "none";
-  }
+    confirmationOfferImage.alt = `Oferta ${offer.name} Fibra Fix`;
 
-  orderConfirmation.hidden = false;
+  }
 
-  orderConfirmation.style.display = "block";
+  if (confirmationOfferName) {
 
-  setTimeout(() => {
-    orderConfirmation.scrollIntoView({
-      behavior: "smooth",
+    confirmationOfferName.textContent = offer.name;
 
-      block: "start",
-    });
-  }, 100);
+  }
+
+  if (confirmationPopular) {
+
+    confirmationPopular.hidden = !offer.popular;
+
+  }
+
+  if (confirmationOfferList) {
+
+    confirmationOfferList.innerHTML = "";
+
+    offer.items.forEach((item) => {
+
+      if (item === "Envío gratis" || item === "Pago contra entrega") {
+
+        return;
+
+      }
+
+      const li = document.createElement("li");
+
+      li.textContent = item;
+
+      confirmationOfferList.appendChild(li);
+
+    });
+
+  }
+
+  if (confirmationName) {
+
+    confirmationName.textContent = orderData.nombre;
+
+  }
+
+  if (confirmationWhatsapp) {
+
+    confirmationWhatsapp.textContent = orderData.whatsapp;
+
+  }
+
+  if (confirmationLocation) {
+
+    confirmationLocation.textContent = `${orderData.ciudad}, ${orderData.departamento}`;
+
+  }
+
+  if (confirmationAddress) {
+
+    confirmationAddress.textContent = orderData.direccion;
+
+  }
+
+  if (confirmationTotal) {
+
+    confirmationTotal.textContent = offer.formattedPrice;
+
+  }
+
+  const checkoutSection = document.getElementById("pedido");
+
+  if (checkoutSection) {
+
+    checkoutSection.style.display = "none";
+
+  }
+
+  orderConfirmation.hidden = false;
+
+  orderConfirmation.style.display = "block";
+
+  setTimeout(() => {
+
+    orderConfirmation.scrollIntoView({
+
+      behavior: "smooth",
+
+      block: "start",
+
+    });
+
+  }, 100);
+
 }
 
 validateCheckout();
@@ -1145,117 +1537,153 @@ validateCheckout();
 const faqItems = document.querySelectorAll(".faq-item");
 
 faqItems.forEach((item) => {
-  const button = item.querySelector(".faq-question");
 
-  const icon = item.querySelector(".faq-icon");
+  const button = item.querySelector(".faq-question");
 
-  button.addEventListener("click", () => {
-    const isActive = item.classList.contains("active");
+  const icon = item.querySelector(".faq-icon");
 
-    faqItems.forEach((faqItem) => {
-      faqItem.classList.remove("active");
+  button.addEventListener("click", () => {
 
-      const faqIcon = faqItem.querySelector(".faq-icon");
+    const isActive = item.classList.contains("active");
 
-      if (faqIcon) {
-        faqIcon.textContent = "+";
-      }
-    });
+    faqItems.forEach((faqItem) => {
 
-    if (!isActive) {
-      item.classList.add("active");
+      faqItem.classList.remove("active");
 
-      icon.textContent = "−";
-    }
-  });
+      const faqIcon = faqItem.querySelector(".faq-icon");
+
+      if (faqIcon) {
+
+        faqIcon.textContent = "+";
+
+      }
+
+    });
+
+    if (!isActive) {
+
+      item.classList.add("active");
+
+      icon.textContent = "−";
+
+    }
+
+  });
+
 });
 
 const purchaseNotification = document.getElementById("purchaseNotification");
 
 const purchaseNotificationName = document.getElementById(
-  "purchaseNotificationName",
+
+  "purchaseNotificationName",
+
 );
 
 const purchaseNotificationCity = document.getElementById(
-  "purchaseNotificationCity",
+
+  "purchaseNotificationCity",
+
 );
 
 const purchaseNotificationOrder = document.getElementById(
-  "purchaseNotificationOrder",
+
+  "purchaseNotificationOrder",
+
 );
 
 const purchaseNotificationTime = document.getElementById(
-  "purchaseNotificationTime",
+
+  "purchaseNotificationTime",
+
 );
 
 const purchaseNotificationStatus = document.getElementById(
-  "purchaseNotificationStatus",
+
+  "purchaseNotificationStatus",
+
 );
 
 const purchaseNotificationClose = document.getElementById(
-  "purchaseNotificationClose",
+
+  "purchaseNotificationClose",
+
 );
 
 const demoPurchases = [
-  {
-    name: "Martín Velandia",
 
-    city: "Cúcuta",
+  {
 
-    quantity: 3,
+    name: "Martín Velandia",
 
-    time: "Hace 5 minutos",
-  },
+    city: "Cúcuta",
 
-  {
-    name: "Laura Gómez",
+    quantity: 3,
 
-    city: "Medellín",
+    time: "Hace 5 minutos",
 
-    quantity: 1,
+  },
 
-    time: "Hace 12 minutos",
-  },
+  {
 
-  {
-    name: "Carlos Ramírez",
+    name: "Laura Gómez",
 
-    city: "Bogotá",
+    city: "Medellín",
 
-    quantity: 2,
+    quantity: 1,
 
-    time: "Hace 18 minutos",
-  },
+    time: "Hace 12 minutos",
 
-  {
-    name: "Andrea Martínez",
+  },
 
-    city: "Bucaramanga",
+  {
 
-    quantity: 2,
+    name: "Carlos Ramírez",
 
-    time: "Hace 24 minutos",
-  },
+    city: "Bogotá",
 
-  {
-    name: "Julián Torres",
+    quantity: 2,
 
-    city: "Cali",
+    time: "Hace 18 minutos",
 
-    quantity: 1,
+  },
 
-    time: "Hace 31 minutos",
-  },
+  {
 
-  {
-    name: "Diana Hernández",
+    name: "Andrea Martínez",
 
-    city: "Barranquilla",
+    city: "Bucaramanga",
 
-    quantity: 3,
+    quantity: 2,
 
-    time: "Hace 42 minutos",
-  },
+    time: "Hace 24 minutos",
+
+  },
+
+  {
+
+    name: "Julián Torres",
+
+    city: "Cali",
+
+    quantity: 1,
+
+    time: "Hace 31 minutos",
+
+  },
+
+  {
+
+    name: "Diana Hernández",
+
+    city: "Barranquilla",
+
+    quantity: 3,
+
+    time: "Hace 42 minutos",
+
+  },
+
 ];
 
 let currentPurchaseIndex = 0;
@@ -1269,93 +1697,131 @@ let purchaseNextTimer = null;
 let purchaseNotificationsStopped = false;
 
 function getPurchaseText(quantity) {
-  if (quantity === 1) {
-    return "compró 1 tarro de Fibra Fix";
-  }
 
-  return `compró ${quantity} tarros de Fibra Fix`;
+  if (quantity === 1) {
+
+    return "compró 1 tarro de Fibra Fix";
+
+  }
+
+  return `compró ${quantity} tarros de Fibra Fix`;
+
 }
 
 function updatePurchaseNotification(purchase) {
-  if (!purchaseNotification || !purchase) {
-    return;
-  }
 
-  purchaseNotificationName.textContent = purchase.name;
+  if (!purchaseNotification || !purchase) {
 
-  purchaseNotificationCity.textContent = `de ${purchase.city}`;
+    return;
 
-  purchaseNotificationOrder.textContent = getPurchaseText(purchase.quantity);
+  }
 
-  purchaseNotificationTime.textContent = purchase.time;
+  purchaseNotificationName.textContent = purchase.name;
 
-  purchaseNotificationStatus.textContent = "Vista previa";
+  purchaseNotificationCity.textContent = `de ${purchase.city}`;
+
+  purchaseNotificationOrder.textContent = getPurchaseText(purchase.quantity);
+
+  purchaseNotificationTime.textContent = purchase.time;
+
+  purchaseNotificationStatus.textContent = "Vista previa";
+
 }
 
 function showPurchaseNotification() {
-  if (
-    purchaseNotificationsStopped ||
-    !purchaseNotification ||
-    demoPurchases.length === 0
-  ) {
-    return;
-  }
 
-  const purchase = demoPurchases[currentPurchaseIndex];
+  if (
 
-  updatePurchaseNotification(purchase);
+    purchaseNotificationsStopped ||
 
-  requestAnimationFrame(() => {
-    purchaseNotification.classList.add("is-visible");
-  });
+    !purchaseNotification ||
 
-  clearTimeout(purchaseHideTimer);
+    demoPurchases.length === 0
 
-  purchaseHideTimer = setTimeout(() => {
-    hidePurchaseNotification();
-  }, 5500);
+  ) {
+
+    return;
+
+  }
+
+  const purchase = demoPurchases[currentPurchaseIndex];
+
+  updatePurchaseNotification(purchase);
+
+  requestAnimationFrame(() => {
+
+    purchaseNotification.classList.add("is-visible");
+
+  });
+
+  clearTimeout(purchaseHideTimer);
+
+  purchaseHideTimer = setTimeout(() => {
+
+    hidePurchaseNotification();
+
+  }, 5500);
+
 }
 
 function hidePurchaseNotification() {
-  if (!purchaseNotification) {
-    return;
-  }
 
-  purchaseNotification.classList.remove("is-visible");
+  if (!purchaseNotification) {
 
-  clearTimeout(purchaseNextTimer);
+    return;
 
-  purchaseNextTimer = setTimeout(() => {
-    if (purchaseNotificationsStopped) {
-      return;
-    }
+  }
 
-    currentPurchaseIndex++;
+  purchaseNotification.classList.remove("is-visible");
 
-    if (currentPurchaseIndex >= demoPurchases.length) {
-      currentPurchaseIndex = 0;
-    }
+  clearTimeout(purchaseNextTimer);
 
-    showPurchaseNotification();
-  }, 15500);
+  purchaseNextTimer = setTimeout(() => {
+
+    if (purchaseNotificationsStopped) {
+
+      return;
+
+    }
+
+    currentPurchaseIndex++;
+
+    if (currentPurchaseIndex >= demoPurchases.length) {
+
+      currentPurchaseIndex = 0;
+
+    }
+
+    showPurchaseNotification();
+
+  }, 15500);
+
 }
 
 if (purchaseNotificationClose) {
-  purchaseNotificationClose.addEventListener("click", () => {
-    purchaseNotificationsStopped = true;
 
-    clearTimeout(purchaseShowTimer);
+  purchaseNotificationClose.addEventListener("click", () => {
 
-    clearTimeout(purchaseHideTimer);
+    purchaseNotificationsStopped = true;
 
-    clearTimeout(purchaseNextTimer);
+    clearTimeout(purchaseShowTimer);
 
-    purchaseNotification.classList.remove("is-visible");
-  });
+    clearTimeout(purchaseHideTimer);
+
+    clearTimeout(purchaseNextTimer);
+
+    purchaseNotification.classList.remove("is-visible");
+
+  });
+
 }
 
 if (purchaseNotification && demoPurchases.length > 0) {
-  purchaseShowTimer = setTimeout(() => {
-    showPurchaseNotification();
-  }, 4500);
+
+  purchaseShowTimer = setTimeout(() => {
+
+    showPurchaseNotification();
+
+  }, 4500);
+
 }

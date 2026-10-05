@@ -2,8 +2,8 @@ const GOOGLE_SHEETS_URL =
   "https://script.google.com/macros/s/AKfycbwz_1H5WeAAyfOhdAZekWef0Flhk0D6lL7ZmczjHWQ9P-0bkebCBad_1Lk8Ujc1hdM8/exec";
 
 const offers = {
-  iniciacion: { name: "INICIACIÓN", price: 79000 },
-  avanzado: { name: "AVANZADO", price: 112900 },
+  iniciacion: { name: "INICIACIÓN", price: 79900 },
+  avanzado: { name: "AVANZADO", price: 114900 },
   completo: { name: "TRATAMIENTO COMPLETO", price: 143900 },
 };
 
