@@ -1354,6 +1354,18 @@ if (checkoutForm) {
 
 
 
+    // Meta Pixel: registrar la compra solo después de que el pedido
+    // haya sido confirmado correctamente por el backend.
+    if (typeof fbq === "function") {
+      fbq("track", "Purchase", {
+        value: offersData[currentOffer].price,
+        currency: "COP",
+        content_name: offersData[currentOffer].name,
+        content_type: "product",
+        content_ids: [currentOffer],
+      });
+    }
+
   showOrderConfirmation(orderData);
 
 } catch (error) {
