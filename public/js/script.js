@@ -1837,3 +1837,63 @@ if (purchaseNotification && demoPurchases.length > 0) {
   }, 4500);
 
 }
+
+// Meta Pixel: eventos personalizados de profundidad de desplazamiento.
+// Registra una sola vez por carga cuando el visitante alcanza 25%, 75% y 100% de la página.
+(() => {
+  const firedScrollEvents = new Set();
+
+  function trackScrollDepth() {
+    if (typeof fbq !== "function") return;
+
+    const doc = document.documentElement;
+    const scrollTop = window.scrollY || doc.scrollTop || 0;
+    const viewportHeight = window.innerHeight || doc.clientHeight || 0;
+    const pageHeight = Math.max(
+      doc.scrollHeight,
+      doc.offsetHeight,
+      doc.clientHeight,
+      document.body ? document.body.scrollHeight : 0,
+      document.body ? document.body.offsetHeight : 0,
+    );
+
+    if (pageHeight <= 0) return;
+
+    const viewedPercent = Math.min(
+      100,
+      ((scrollTop + viewportHeight) / pageHeight) * 100,
+    );
+
+    const thresholds = [
+      { percent: 25, event: "Scroll25" },
+      { percent: 75, event: "Scroll75" },
+      { percent: 99, event: "Scroll100" },
+    ];
+
+    thresholds.forEach(({ percent, event }) => {
+      if (viewedPercent >= percent && !firedScrollEvents.has(event)) {
+        firedScrollEvents.add(event);
+        fbq("trackCustom", event, {
+          scroll_percent: event === "Scroll100" ? 100 : percent,
+        });
+      }
+    });
+  }
+
+  let scrollFrame = 0;
+
+  function scheduleScrollDepthCheck() {
+    if (scrollFrame) return;
+
+    scrollFrame = requestAnimationFrame(() => {
+      scrollFrame = 0;
+      trackScrollDepth();
+    });
+  }
+
+  window.addEventListener("scroll", scheduleScrollDepthCheck, { passive: true });
+  window.addEventListener("resize", scheduleScrollDepthCheck, { passive: true });
+  window.addEventListener("load", scheduleScrollDepthCheck);
+
+  scheduleScrollDepthCheck();
+})();
