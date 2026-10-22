@@ -1270,6 +1270,47 @@ if (whatsappInput) {
 
 }
 
+const ORDER_LOCK_DURATION_MS = 10 * 60 * 1000;
+const ORDER_LOCK_STORAGE_KEY = "fibrafix_last_order";
+
+function getRecentOrderLock(whatsapp) {
+  try {
+    const saved = localStorage.getItem(ORDER_LOCK_STORAGE_KEY);
+    if (!saved) return null;
+
+    const lock = JSON.parse(saved);
+    const cleanWhatsapp = String(whatsapp).replace(/\D/g, "");
+
+    if (
+      lock.whatsapp !== cleanWhatsapp ||
+      !lock.timestamp ||
+      Date.now() - lock.timestamp >= ORDER_LOCK_DURATION_MS
+    ) {
+      return null;
+    }
+
+    return lock;
+  } catch {
+    return null;
+  }
+}
+
+function saveOrderLock(whatsapp) {
+  try {
+    localStorage.setItem(
+      ORDER_LOCK_STORAGE_KEY,
+      JSON.stringify({
+        whatsapp: String(whatsapp).replace(/\D/g, ""),
+        timestamp: Date.now(),
+      }),
+    );
+  } catch {
+    // El backend mantiene la protección aunque localStorage no esté disponible.
+  }
+}
+
+let orderSubmitting = false;
+
 if (checkoutForm) {
 
   checkoutForm.addEventListener("submit", async (event) => {
@@ -1320,6 +1361,21 @@ if (checkoutForm) {
 
     };
 
+    const recentOrder = getRecentOrderLock(orderData.whatsapp);
+
+    if (recentOrder) {
+      alert(
+        "Tu pedido ya fue registrado. Para evitar pedidos duplicados, podrás realizar otro pedido después de 10 minutos.",
+      );
+      return;
+    }
+
+    if (orderSubmitting) {
+      return;
+    }
+
+    orderSubmitting = true;
+
    try {
 
   const response = await fetch("/api/orders", {
@@ -1340,6 +1396,15 @@ if (checkoutForm) {
 
   const result = await response.json();
 
+  if (response.status === 409 && result?.duplicate) {
+    saveOrderLock(orderData.whatsapp);
+    alert(
+      result.message ||
+        "Tu pedido ya fue registrado. Para evitar pedidos duplicados, podrás realizar otro pedido después de 10 minutos.",
+    );
+    return;
+  }
+
 
 
   if (!response.ok) {
@@ -1351,6 +1416,8 @@ if (checkoutForm) {
 
 
   console.log("Pedido enviado al backend:", result);
+
+  saveOrderLock(orderData.whatsapp);
 
 
 
@@ -1380,6 +1447,8 @@ if (checkoutForm) {
 
   );
 
+} finally {
+  orderSubmitting = false;
 }
 
   });

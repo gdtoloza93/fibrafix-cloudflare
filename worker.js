@@ -7,6 +7,8 @@ const offers = {
   completo: { name: "TRATAMIENTO COMPLETO", price: 143900 },
 };
 
+const ORDER_LOCK_SECONDS = 10 * 60;
+
 function jsonResponse(body, status = 200) {
   return new Response(JSON.stringify(body), {
     status,
@@ -84,6 +86,24 @@ async function handleOrder(request, env) {
       );
     }
 
+    const orderLockCache = caches.default;
+    const orderLockKey = new Request(
+      `https://fibrafix.store/__order_lock__/${encodeURIComponent(cleanWhatsapp)}`,
+    );
+    const existingOrderLock = await orderLockCache.match(orderLockKey);
+
+    if (existingOrderLock) {
+      return jsonResponse(
+        {
+          success: false,
+          duplicate: true,
+          message:
+            "Tu pedido ya fue registrado. Para evitar pedidos duplicados, podrás realizar otro pedido después de 10 minutos.",
+        },
+        409,
+      );
+    }
+
     const order = {
       oferta,
       nombre: cleanName,
@@ -116,6 +136,15 @@ async function handleOrder(request, env) {
           `No se pudo guardar el pedido en Google Sheets (HTTP ${sheetsResponse.status})`,
       );
     }
+
+    await orderLockCache.put(
+      orderLockKey,
+      new Response("1", {
+        headers: {
+          "Cache-Control": `max-age=${ORDER_LOCK_SECONDS}`,
+        },
+      }),
+    );
 
     const phone = env.CALLMEBOT_PHONE;
     const apiKey = env.CALLMEBOT_API_KEY;
