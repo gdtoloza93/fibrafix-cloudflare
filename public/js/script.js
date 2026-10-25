@@ -994,13 +994,7 @@ const offersData = {
 
       "1 Tarro de Fibra Fix (600 g)",
 
-      "Acceso plataforma acompañamiento Método Fibra Fix 21 Días (Acompañamiento, retos, menús, despensa inteligente y más)",
-
-      "Acceso a bono de $10.000 para próximas compras de 1 unidad (Completando método 21 días)",
-
-      "Acceso a 1 Fibra Fix gratis para próximas compras de 2 o más unidades (Completando método 21 días)",
-
-      "Acceso a Club de Fibra Fix Referidos (Bonos por referidos)",
+      "Biblioteca pdf +500 rectas (obsequio)",
 
       "Envío gratis",
 
@@ -1030,9 +1024,9 @@ const offersData = {
 
       "Acceso plataforma Método Fibra Fix 21 Días (Acompañamiento, retos, menús, despensa inteligente y más)",
 
-      "Acceso a bono de $10.000 para próximas compras de 1 unidad (Completando método 21 días)",
+      "Acceso a bono de $10.000 para próximas compras de 1 unidad (Obsequio)",
 
-      "Acceso a 1 Fibra Fix gratis para próximas compras de 2 o más unidades (Completando método 21 días)",
+      "Acceso a 1 Fibra Fix gratis para próximas compras de 2 o más unidades (Obsequio)",
 
       "Acceso a Club de Fibra Fix Referidos (Bonos por referidos)",
 
@@ -1064,9 +1058,9 @@ const offersData = {
 
       "Acceso plataforma Método Fibra Fix 21 Días (Acompañamiento, retos, menús, despensa inteligente y más)",
 
-      "Acceso a bono de $10.000 para próximas compras de 1 unidad (Completando método 21 días)",
+      "Acceso a bono de $10.000 para próximas compras de 1 unidad (Obsequio)",
 
-      "Acceso a 1 Fibra Fix gratis para próximas compras de 2 o más unidades (Completando método 21 días)",
+      "Acceso a 1 Fibra Fix gratis para próximas compras de 2 o más unidades (Obsequio)",
 
       "Acceso a Club de Fibra Fix Referidos (Bonos por referidos)",
 
